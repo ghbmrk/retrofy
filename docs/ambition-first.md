@@ -1,0 +1,51 @@
+# Ambition-first adaptation: work backward from the experience
+
+## Target and decision boundary
+
+Use **Baldur's Gate 3, single-player offline play**, as the flagship stress target, pending a user-supplied exact installation, platform/version fingerprint and rights ledger. This is a research target, not a compatibility claim or purchase recommendation. Its interacting party combat, exploration, dialogue and persistent consequences challenge substantially more of the architecture than another grid puzzle. Official feature reference: https://baldursgate3.game/about . Source availability is not required; recovery starts with the shipped installation, observable behavior and permitted data/script inspection. Available modding documentation is an auxiliary oracle, not proof of shipped behavior.
+
+There is no uniquely ordered “most ambitious game.” Ambition here means the amount and diversity of essential behavior preserved, not installation size. BG3 tests systemic combinatorics and authored content while its turn-based combat gives A/B/D-pad a plausible route. A real-time independent-aim ARPG may fail controls before compression matters. The current Sokoban backend remains a baseline and regression suite; it does not define the destination.
+
+Start with the full essential experience as the specification. Work backward to necessary state, information, content and hardware costs. Small experiments test the full target's hardest assumptions; they must never be relabeled as a completed adaptation. If necessary departures change essential decisions, report rejection or request approval for a reinterpretation. Multiplayer and online services are outside this declared single-player target; rendering, audio, spatial quantization and text presentation are proposed departures requiring explicit review, not already approved reductions.
+
+Candidate invariants to recover and ratify: action availability and resources, outcome probabilities and random sequencing where equivalence is intended, interaction precedence, party capabilities, visibility/reachability/elevation decisions, quest and dialogue dependencies, irreversible consequences, information needed for tactical choices, and persistence. They are hypotheses about the relevant contract until original-runtime evidence and user review establish them. No automatic party reduction, deleted ability classes, smaller encounters, flattened elevation, invented dialogue or changed combat rules is an optimization.
+
+## What Handwired actually contributes
+
+Sources inspected: https://github.com/chenglou/handwired/blob/main/README.md , https://github.com/chenglou/handwired/blob/main/docs/execution-model.md and https://github.com/chenglou/handwired/blob/main/docs/behavior-choices.md . Handwired expresses state and computation through a small circuit vocabulary and targets JS/WebGPU. Its documentation distinguishes source declarations from proofs and circuit conformance from agreement with the replaced program. It exploits dead-code removal, sharing, declared numeric grids/ranges, one-hot selection and specialized index/gather operations. These are useful architectural lessons.
+
+This does **not** establish that neural networks compress arbitrary programs or that matrix multiplication suits an SM83. Dense floating-point work, evaluating both branches, large intermediate buffers and unrolling loops can increase every relevant cost. Differentiability is potentially useful for offline representation search, not a reason to run a differentiable engine on the cartridge. “Exact” must name numeric semantics and admissible inputs. Reduced decision diagrams, partial evaluation and superoptimization are established approaches; their combination here is a research program, not a claim of newly invented algorithms.
+
+## Proposed family of representations and searches
+
+| Subsystem | Representation candidates | Exactness boundary / failure |
+|---|---|---|
+| Interaction rules | Sparse event rules; shared predicate DAGs; decision diagrams; bytecode; specialized native routines | Compare legal actions, updates and ordering; state explosion or slow dispatch rejects a representation, not the original mechanics |
+| Scripts and quests | Typed effect/condition bytecode; shared subgraphs; packed IDs and dependency indexes; partial evaluation against immutable installation data | Retain provenance and authored branches; never generate replacement prose or erase rare branches to fit |
+| Simulation scheduling | Dependency-directed invalidation, change sets, incremental aggregates and transactional event commits | Prove which changes can affect which outputs; stale visibility, changed update order or missed interactions fail |
+| World geometry | Visibility/navigation graphs, hierarchical collision, quantized coordinates, portal representations and separately encoded elevation | Preserve relevant reachability, line of sight, ranges and positional choices; a graph abstraction that changes these needs approval |
+| Text and assets | Lossless dictionary/grammar coding with seek checkpoints; tile/palette dictionaries; delta animation; procedurally reconstructed repeated geometry | Count decoder, indexes, scratch buffers, bank switches and latency. Lossy art/voice substitutions need inspectable review |
+| Search and synthesis | Host-side symbolic simplification, counterexample-guided synthesis and target-cost search; learned proposals with deterministic validation | Training/trace agreement cannot prove unobserved semantics. No model weights accepted as an exact rules substitute without proof |
+| Native execution | Hybrid bytecode plus specialized hot kernels; bank-aware data placement; cold-content decoding on demand | Optimize whole ROM, peak RAM, worst-case cycles and player-visible pauses together; no streaming from a Mac/cloud |
+
+A ROM should encode generative rules and shared structure, not enumerate every possible outcome. Authored information with little redundancy still costs space. Code/data tradeoffs are explicit: replacing a table with code or a learned model moves costs; it does not eliminate them. The compiler should compare native code, bytecode, graph and raw-table candidates and preserve a Pareto frontier under measured constraints. No single universal representation is assumed.
+
+Hard target: stock Chromatic, native GBC execution, compatible cartridge, no remote inference, no gameplay coprocessor. ROM tiers for experiments: 256 KiB, 1 MiB and a declared larger supported cartridge. Do not describe the current prototype's ROM size as a hardware ceiling. Standard MBC5's addressable envelope and the actual cartridge's capacity are different constraints; validate mapper, RAM and flash hardware before claiming compatibility. CPU, RAM, VRAM, transfer and scanline budgets remain independent of ROM compression.
+
+## First disproof experiments, before content-scale implementation
+
+1. **Controls and information:** an original synthetic encounter with four controllable party members, elevation, multiple target types, dialogue choices and inspectable consequences. D-pad navigates, A selects/commits, B cancels/backs out. No chords. Measure action-selection steps, mistakes, inspection access and decision visibility against the original. Context menus are allowed only if observed usability is comfortable; small inputs do not excuse disruptive navigation. Set task/time/error thresholds before playtesting, with users, rather than inventing passing scores afterward.
+2. **Rule closure:** extract a bounded interaction slice from a fingerprinted legally supplied installation, identify all rules reachable from those actions and preregister adversarial combinations. Test reflected effects, simultaneous effects, deaths, interrupting events and ordering. Freeze a held-out trace set. Refuse to call a hand-authored synthetic encounter BG3 recovery.
+3. **Representation search:** lower the same bounded contract to specialized C, compact VM and decision graph. Exhaustively check finite subdomains and generate counterexamples elsewhere. Compile/run the exact ROM; report total linked bytes including runtime, peak working memory and worst-case cycles. Reject any representation whose compressed data hides an oversized/slow decoder.
+4. **Content lower bound:** inventory actual text, branches, unique assets and dependencies locally. Measure lossless compressed bytes, random-access indexes and peak decoding buffers; estimate remaining corpus with explicit uncertainty. If authored content alone exceeds the cartridge budget, full-content feasibility fails. Smaller chapters remain separately labeled scope experiments.
+5. **Transfer:** freeze the rule/backend machinery before a different game's permitted script/behavior slice, for example Disco Elysium for dialogue and persistent state. Count every new adapter, special rule and manual intervention. Do not claim cross-engine transfer from another generated tactical fixture.
+
+## Completed initial experiment: exact finite-domain data compaction
+
+Run `python3 experiments/semantic_compaction.py`; deterministic output is in `evidence/semantic-compaction.json`. Original synthetic tactical rules combine health, distance, four actions and six flags in a 14-bit domain. A multi-terminal decision graph shares identical branches and tests 24 variable orders. Its actual packed bytes are decoded and checked against all 16,384 reference cases. This is an offline Python experiment, not a native ROM or Handwired benchmark.
+
+- Structured rules: a 32,768-byte uint16 truth table becomes a 664-byte graph, with zero mismatches and at most 13 node visits.
+- High-entropy negative control: the graph expands to 81,914 bytes, so selection retains the 32,768-byte raw table.
+- These are representation-data sizes only. The selector, decoder code, bank metadata, native execution time and working RAM are not measured. A short native function may beat both representations. The synthetic rules' repetition was chosen to test sharing, not sampled from BG3; no game-size compression factor follows.
+
+This establishes a bounded exact sharing mechanism and an explicit failure case. It establishes no automatic behavioral recovery, full-state scaling, perceptual fidelity, human-effort reduction, real-game conversion, independent evaluation or physical Chromatic result.

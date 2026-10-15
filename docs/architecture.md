@@ -1,5 +1,7 @@
 # Architecture, alternatives and disproof criteria
 
+The research direction now works backward from an ambitious modern RPG, rather than outward from the implemented puzzle family. See [the ambition-first target, Handwired analysis and completed compaction experiment](ambition-first.md). The bounded Sokoban implementation remains the measured baseline; the new target is not a supported game.
+
 The defensible abstraction is a **family of explicit behavioral contracts**, not a universal “game IR.” A binary IR describes machine operations and dependencies; it does not identify which decisions or perceptual cues define a game. A semantic contract must bind each recovered rule to observations, uncertainty and acceptance tests. A native backend must preserve that contract or disclose a departure.
 
 Only `sokoban-grid-v1` is implemented. It stores bounded geometry, walls, goals, boxes and player position. Its executable Python specification and independently written C kernel share no generated movement implementation. Both assume exact integer grid coordinates and atomic cardinal moves: test destination, then the next box cell, then update box and player, then recompute/maintain win state. No continuous time or numerical approximation is implied. The C backend lowers this contract to native SM83 machine code through GBDK, not an interpreter of the source platform.

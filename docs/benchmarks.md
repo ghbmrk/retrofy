@@ -30,3 +30,7 @@ Split by **game and runtime architecture**, not level. Never train or tune on he
 - Transfer: frozen backend success on unfamiliar games, interventions and incremental cost. Another level using the same engine is not architecture transfer.
 
 Current results cover four synthetic boards (one mechanics family), one exhaustive deadlock rejection, randomized generated geometries and no unfamiliar games. Human effort was not instrumented; no time-saving factor is claimed. Later benchmark results must preserve this baseline rather than retroactively relabel fixtures as commercial conversions.
+
+## Flagship stress target
+
+The ambition-first research target is now Baldur's Gate 3 single-player offline behavior, pending exact-version intake and permissions. See [the target contract and disproof sequence](ambition-first.md). The earlier shortlist remains useful for controlled transfer and negative controls; it is not the ceiling of the project. No BG3 files or behavioral capture have been supplied, and no compatibility is claimed.

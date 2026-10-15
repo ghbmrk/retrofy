@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "scope": "synthetic finite-domain exact data compaction; not a game conversion",
+  "limitations": [
+    "Table baseline is not original source or optimized native C.",
+    "Decoder machine-code bytes, banking, native cycles and RAM are unmeasured.",
+    "Exhaustive tests cover only the declared 14-bit domain.",
+    "Decision diagrams and variable-order search are established techniques, not a novelty claim.",
+    "No Handwired execution, trained model or proprietary input is used."
+  ],
+  "results": [
+    {
+      "name": "interacting_tactical_rules",
+      "domain_cases": 16384,
+      "orders_searched": 24,
+      "raw_table_bytes": 32768,
+      "graph_bytes": 664,
+      "graph_nodes": 132,
+      "graph_to_table_ratio": 0.020264,
+      "worst_node_visits": 13,
+      "selected": "graph",
+      "selected_data_bytes": 664,
+      "mismatches": 0,
+      "order": [
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "graph_sha256": "88a7e1643076dbb221e1c60b98dded61f7982cfad5b188941838cc1825ca1770",
+      "reference_table_sha256": "54bdb4204ee2d5cab683635125f035fbc713668b4a901ec7b4ba8b233e8b0215"
+    },
+    {
+      "name": "high_entropy_negative_control",
+      "domain_cases": 16384,
+      "orders_searched": 24,
+      "raw_table_bytes": 32768,
+      "graph_bytes": 81914,
+      "graph_nodes": 16382,
+      "graph_to_table_ratio": 2.499817,
+      "worst_node_visits": 14,
+      "selected": "raw_table",
+      "selected_data_bytes": 32768,
+      "mismatches": 0,
+      "order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "graph_sha256": "13f6c4e1415738a6a283662ddf845975548b8c584b00e8ba75961c778474bcb1",
+      "reference_table_sha256": "959d2fe5af02cffcfc793d3d9f84a1934ac1c59319ab57aa3dbf2e6328d316e5"
+    }
+  ]
+}
