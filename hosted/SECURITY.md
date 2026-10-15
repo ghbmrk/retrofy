@@ -13,6 +13,8 @@ Revision 2 minimizes sensitive data rather than promising absolute security.
 - Unlink rotates revocation state, invalidating every copied link cookie, and deletes pending state and legacy account/library records. Pseudonymous rate counters and revocation state remain. Expired pending metadata is logically unusable but is not automatically physically deleted.
 - Public deployment remains owner-private behind Sites authentication. The Worker trusts only the identity header supplied by that authenticated gateway. It must never be exposed through a route that permits clients to set that header directly.
 
+The Referrer-Policy is `same-origin`: same-origin forms retain their Origin, while cross-origin navigations receive no referrer. `no-referrer` is unsuitable here because it can turn a legitimate form Origin into `null`; null origins remain rejected.
+
 ## Trust and limits
 
 Security depends on Sites enforcing its access gate and stripping/replacing identity headers, TLS, Cloudflare R2 conditional-write semantics, secret protection, browser cookie protections, and Valve. The operator, hosting provider, compromised browser or compromised account can defeat relevant boundaries. Origin/CSRF protections do not cure gateway or host compromise. SteamIDs are encrypted client-side state, not anonymous data. Metadata still links activity to a hashed platform identifier. Infrastructure may retain request/access logs; application code does not log callbacks, API keys or game lists. HTTP no-store cannot prevent screenshots or all browser/OS retention.
@@ -21,6 +23,6 @@ The Steam service key grants service API access; OpenID proves identity but does
 
 ## Verification
 
-Run `node --test tests/worker.mjs`. Fourteen tests cover identity/origin checks, script-free markup and CSP, signed/encrypted token rejection, CSRF scope, concurrent single-use consumption and rate limits, mocked OpenID success/rejection, replay, cross-user callback rejection, missing service configuration, escaped transient library rendering, revocation, and incomplete library rejection. The in-memory R2 model implements conditional writes; these tests do not validate provider infrastructure, actual Valve login, production R2 concurrency or a real private library fetch. Independent review and authenticated live testing remain valuable.
+Run `node --test tests/worker.mjs`. Fifteen tests cover identity/origin checks, script-free markup and CSP, signed/encrypted token rejection, CSRF scope, concurrent single-use consumption and rate limits, mocked OpenID success/rejection, replay, cross-user callback rejection, missing service configuration, escaped transient library rendering, revocation, and incomplete library rejection. The in-memory R2 model implements conditional writes; these tests do not validate provider infrastructure, actual Valve login, production R2 concurrency or a real private library fetch. Independent review and authenticated live testing remain valuable.
 
 Primary protocol/storage references: https://steamcommunity.com/dev and https://developers.cloudflare.com/r2/api/workers/workers-api-reference/ .
