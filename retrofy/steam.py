@@ -194,6 +194,7 @@ Steam sign-in identifies the account; it does not grant library API access. Priv
     return Handler
 
 def serve(output,port=0):
+    raise SteamError("Legacy local Steam service is disabled; use the hosted private connection.")
     session=LinkSession(output)
     if session.output.exists(): raise SteamError('Use a new output directory per sync attempt')
     server=HTTPServer(('127.0.0.1',port),handler_for(session)); server.timeout=1

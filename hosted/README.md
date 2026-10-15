@@ -1,13 +1,23 @@
 # Retrofy hosted Steam connection
 
-Private, HTTPS, phone-accessible Steam account linking and visible-library snapshots. No Mac/localhost runtime dependency.
+Phone-accessible Steam identity connection hosted independently of the Mac. Production access remains owner-private through Sites authentication. Sign in to the owning ChatGPT account, then choose **Sign in on Steam**. Enter Steam credentials only on `steamcommunity.com`.
 
-The Sites access boundary authenticates the visitor; all account/library storage is keyed by the server-injected stable `oai-authenticated-user-id`. Steam OpenID is an additional external account link, not a replacement for Sites authentication. Callbacks use `/steam/return`, preserving the platform's reserved auth routes.
+Revision 2 has no personal API-key entry, no stored library snapshots, no application JavaScript, one-hour encrypted account-link cookies, atomic single-use login challenges, per-user rate limits, CSRF protection and revocation. See [SECURITY.md](SECURITY.md) for exact assumptions and residual risks.
 
-Runtime configuration: `SESSION_SECRET` (required secret), R2 `BUCKET` binding (required), `STEAM_WEB_API_KEY` (optional server-managed secret). Without a server-managed Steam API key, the linked user supplies a key in an HTTPS password form for each sync. Keys are forwarded only to Valve and never persisted or logged. No arbitrary-URL fetching, user game upload/download, privacy-setting changes or ownership/compatibility certification occurs.
+## Operator configuration
 
-Library snapshots are private hosted records, available across devices after sign-in. An API-unavailable/private library is an error rather than an empty-success result. No background scheduler or cloud-save sync is implemented. Account switching and record deletion UI are not implemented.
+Use the Sites runtime secret manager for `SESSION_SECRET` (high entropy) and, to enable library lookup, `STEAM_WEB_API_KEY` (operator-managed). Configure `SITE_ORIGIN` as the exact HTTPS production origin. Do not commit secrets, request user keys, expose the Worker outside its identity-enforcing gateway, or change the private audience implicitly. R2 binding: `BUCKET`. Only pseudonymous pending state, rate counters and revocation state are stored. Unlink also deletes legacy saved account/library records.
 
-Verification: run `node --test tests/*.mjs`, `bash scripts/build.sh`, then `node scripts/validate-artifact.mjs`. Automated provider-success fixtures are mocks. A real account link/library sync still requires the user's Valve login/API access. Production transport and access must be checked separately from unit tests.
+Without an operator key, Steam login remains available and library sync is visibly disabled. OpenID does not bypass private Steam Game details. Imported titles remain unassessed; ownership is not adaptation permission.
 
-Steam APIs: https://steamcommunity.com/dev and https://partner.steamgames.com/doc/webapi/IPlayerService#GetOwnedGames . Source is original MIT code; no Steam credentials, identities, library records or proprietary game files belong in this repository.
+## Reproduce
+
+Use Node 24 or compatible WebCrypto runtime:
+
+```
+node --test tests/worker.mjs
+bash scripts/build.sh
+node scripts/validate-artifact.mjs
+```
+
+Build output is `dist/`. Publish through the Sites source workflow: commit/push the exact source, package that source's build output, then deploy the saved version privately. Keep local project configuration out of reusable examples. No proprietary game material belongs in source, logs or artifacts.

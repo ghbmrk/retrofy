@@ -29,8 +29,7 @@ def main():
     args=p.parse_args()
     try:
         if args.cmd=='steam-link':
-            from .steam import serve
-            serve(args.out,args.port); return
+            raise Rejected("Legacy local Steam login is disabled. Use https://retrofy-steam.markizard.chatgpt.site on any device; never submit a personal API key.")
         if args.cmd=='identify':
             print(json.dumps(identify(args.input),indent=2)); return
         if args.cmd=='controls':

@@ -61,8 +61,6 @@ Read [architecture and falsification experiments](docs/architecture.md), [benchm
 
 ## Steam library connection
 
-For phone access, use the private hosted connection at https://retrofy-steam.markizard.chatgpt.site . No Mac is required; source is in `hosted/`. A Steam Web API key is still required for visible-library retrieval and is not saved.
+Use the [private hosted connection](https://retrofy-steam.markizard.chatgpt.site) on your phone. No Mac is required. Revision 2 accepts no personal API keys and stores no library snapshots. Steam identity uses an encrypted, revocable one-hour cookie; server-side state is limited to pseudonymous challenges, rate counters and revocation metadata. Source and the threat model are under `hosted/`.
 
-For desktop-only research, `python3 -m retrofy.cli steam-link --out local/steam-attempt-1` starts a local account-linking page. Sign in directly on Valve, then supply a Steam Web API key through the local password field to fetch visible library metadata. No API key or password is saved; no game files are downloaded or executed. This is a one-shot snapshot, not Steam Cloud/save sync. [Setup, privacy boundaries and verification status](docs/steam.md). Live authenticated sync still requires the user sign-in/key step.
-
-[Stardew Valley flagship research target](docs/stardew-target.md) records the more ambitious candidate and first experiments; it is not a supported conversion.
+Library lookup requires an operator-managed Steam API key, currently not configured. Login is available; library sync remains disabled. The legacy local login entry points are disabled. [Setup and verification limits](docs/steam.md).

@@ -1,31 +1,11 @@
-# Steam linking and visible-library sync
+# Steam connection
 
-## Hosted phone flow (preferred)
+Open https://retrofy-steam.markizard.chatgpt.site on a phone or computer. Sign in with the owning ChatGPT account, then choose **Sign in on Steam**. Steam credentials stay on Valve. No Mac is required. The service remains owner-private.
 
-Open https://retrofy-steam.markizard.chatgpt.site on your phone. The private service requires your owning ChatGPT account, then links Steam through Valve. Its HTTPS callback and R2 account/library storage run in the cloud; no Mac or localhost server is needed. Source is under `hosted/`.
+Revision 2 accepts no personal API keys. Library lookup needs an operator-managed runtime secret that is not yet configured; login is available but sync is disabled. OpenID proves Steam identity, not permission to read private Game details. No real authenticated library retrieval has been demonstrated.
 
-A service Steam API key has not been configured. After Steam sign-in, enter a Steam Web API key in the hosted HTTPS password field for each library sync. It is forwarded only to Valve and not saved. Steam visibility rules apply. Native deployment succeeded; authenticated Steam/library sync still requires user action and has not been demonstrated.
+Library metadata is rendered only for the request, with no saved snapshot. The link is an authenticated encrypted one-hour browser cookie bound to the platform user and origin. Atomic one-use login challenges, operation-scoped CSRF checks, per-user rate limits, restrictive CSP and unlink revocation reduce the exposed surface. Pseudonymous rate/revocation metadata remains after unlink. See [the exact threat model](../hosted/SECURITY.md) for hosting trust, retention and residual risks.
 
-The earlier localhost flow below remains available for desktop-only research. It cannot be used from a different device.
+The old local CLI/server entry points are disabled. Legacy Python components remain for research tests and are not deployed. Never deploy them or ask users to enter API keys. No installation scanning, game downloading, purchase, game execution or Steam privacy changes occur. Library membership does not prove adaptation rights or GBC compatibility.
 
-## Local desktop flow
-
-Run `python3 -m retrofy.cli steam-link --out local/steam-attempt-1` from the checkout. A loopback-only service prints a random URL and expires after 30 minutes. Open that URL in a browser on the same computer and choose **Sign in on Steam**. The sign-in page is Valve's `steamcommunity.com` OpenID endpoint; Retrofy never receives a Steam password or Steam Guard code.
-
-Valve's [OpenID flow](https://steamcommunity.com/dev) identifies a SteamID. It does **not** grant access to private libraries or supply an API token. After verified sign-in, enter a [Steam Web API key obtained directly from Valve](https://steamcommunity.com/dev/apikey) in the local password field. Key registration, agreement acceptance and any credential creation are user actions. Keys are sent only to Valve's official HTTPS `GetOwnedGames` endpoint, never saved, and not placed in browser URLs or process arguments. The endpoint requires the key in its server-side GET request; do not add HTTP request logging. Python/TLS runtime memory is not a secure secret vault.
-
-Steam's [GetOwnedGames documentation](https://partner.steamgames.com/doc/webapi/IPlayerService#GetOwnedGames) limits results to game details visible to the caller. A private/unavailable response is reported as unavailable, never a successful empty library. The app does not change privacy settings. If the API cannot see the library, the user must decide whether to change visibility; linking does not bypass that choice. Publisher ownership endpoints require publisher-specific access and are not a substitute for arbitrary library access.
-
-## Local outputs and security scope
-
-- `account.json`: SteamID and verification method only; no assertion, password or API key.
-- `library.json`: returned app IDs, names and playtime, all marked `unassessed`; no compatibility or adaptation-rights inference. This is a snapshot, not ongoing background synchronization or Steam Cloud/save integration.
-- Each file is created with mode 0600 and exclusive creation. Use a new output directory for each attempt. Outputs belong under ignored `local/`, never in Git or public issues. File parent directories must be trusted; hostile local processes are outside the protection boundary.
-- The server binds only `127.0.0.1`, checks Host/Origin and form CSRF token, has a random callback path, validates signed identity fields and timestamp, verifies assertions directly with the fixed Valve HTTPS endpoint, and rejects replay after linking. It refuses redirects from API/verification endpoints. Response sizes and timeouts are bounded. HTTP access logging is disabled.
-- No installation/filesystem scanning, purchases, downloads, game execution, license circumvention or Steam privacy changes occur. Steam is not required to be installed for account/library metadata linking.
-
-A future hosted product should use its own securely managed API credentials rather than asking each user to register a key. That service, operational secret management and independent security audit are not implemented. The current implementation is a local research integration, not a production identity provider.
-
-## Verification status
-
-Automated tests cover assertion tampering, missing signature verification, expired nonce, wrong endpoint/callback, private versus empty library, duplicate/inconsistent metadata, invalid-key rejection, restrictive file creation, Host/Origin/CSRF checks, session expiry and callback replay. Provider responses in unit tests are mocks and are labeled as such. The live local page and redirect to Valve's official sign-in page were observed. **No authenticated library sync has yet been demonstrated.** A completed account link requires a real Valve assertion; a successful sync requires a real API response and saved local snapshot.
+Fourteen hosted tests use conditional-write storage models and mocked Valve responses. They establish application behavior under those models, not a security audit of Sites/Cloudflare/Valve or successful live authentication. Tests and reproducible build instructions are in `hosted/`.
