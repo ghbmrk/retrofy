@@ -21,3 +21,9 @@ node scripts/validate-artifact.mjs
 ```
 
 Build output is `dist/`. Publish through the Sites source workflow: commit/push the exact source, package that source's build output, then deploy the saved version privately. Keep local project configuration out of reusable examples. No proprietary game material belongs in source, logs or artifacts.
+
+## SteamOS local intake
+
+`/intake` offers a deterministic, source-only tar.gz built by `scripts/package-intake.py`. The GUI launcher runs Python 3 and KDialog/Zenity on the user's SteamOS machine, independently of Steam linking or an API key. No installer, sudo, network API, extraction, account fields, saves or userdata access. It creates a new private local report directory. Only manifest app/build identifiers and safe archive labels, sizes, signature hints and SHA-256 hashes of the first 4096 bytes enter the report. Full-file identity, mods and compatibility remain unassessed. Installation folders and the user's local desktop are trusted; hostile local processes are outside this boundary.
+
+Run `python3 tests/intake_test.py` for discovery, privacy, link/device rejection, cancellation, non-destructive output, archive packaging and launcher argument checks. Native KDE/SteamOS launch behavior requires user-device verification; synthetic tests do not establish it. Launch instructions and limitations ship inside the archive.

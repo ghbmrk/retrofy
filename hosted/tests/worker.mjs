@@ -1,5 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
-const source=await readFile(new URL('../worker/index.js',import.meta.url),'utf8');
+const rawSource=await readFile(new URL('../worker/index.js',import.meta.url),'utf8');
+const intakeBundle=await readFile(new URL('../worker/intake-bundle.js',import.meta.url),'utf8');
+const source=rawSource.replace("import { INTAKE } from './intake-bundle.js';",intakeBundle.replace('export const INTAKE','const INTAKE'));
 const {default:worker,handle,sign,unsign,hash,seal,unseal,token,consume,rate,normalize}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const origin='https://retrofy.example',NS='http://specs.openid.net/auth/2.0',OPENID='https://steamcommunity.com/openid/login',id='76561198000000000';
 function bucket(){const rows=new Map();let revision=0;return {rows,async get(k){const row=rows.get(k);return row?{etag:row.etag,json:async()=>JSON.parse(row.value)}:null;},async put(k,value,opts={}){const old=rows.get(k),c=opts.onlyIf;if(c?.etagMatches&&old?.etag!==c.etagMatches||c?.etagDoesNotMatch==='*'&&old)return null;const row={value,etag:String(++revision)};rows.set(k,row);return row;},async delete(keys){for(const k of [keys].flat())rows.delete(k);}};}
@@ -29,3 +31,5 @@ test('form-compatible referrer policy preserves same-origin Origin; null and hos
 test('CSP permits the fixed Steam redirect destination without wildcard form targets',async()=>{const r=await worker.fetch(req('/'),env());const csp=r.headers.get('content-security-policy');const forms=csp.split(';').find(x=>x.trim().startsWith('form-action')).trim();assert.equal(forms,"form-action 'self' https://steamcommunity.com");assert.match(csp,/script-src 'none'/);});
 
 test('redirected verification fails closed without issuing a link cookie',async()=>{const e=env(),f=await flow(e);await assert.rejects(handle(req(f.path,{headers:{cookie:f.cookie}}),e,async()=>new Response('',{status:302,headers:{location:'https://evil.example'}})),{status:502});});
+
+test('private intake is accessible without Steam linking and download matches its digest',async()=>{const e=env();const page=await worker.fetch(req('/intake'),e);assert.equal(page.status,200);assert.match(await page.text(),/Download SteamOS intake/);const denied=await worker.fetch(new Request(origin+'/downloads/Retrofy-Intake-SteamOS.tar.gz'),e);assert.equal(denied.status,401);const download=await worker.fetch(req('/downloads/Retrofy-Intake-SteamOS.tar.gz'),e);assert.equal(download.status,200);assert.equal(download.headers.get('content-type'),'application/gzip');const bytes=await download.arrayBuffer();const sha=Buffer.from(await crypto.subtle.digest('SHA-256',bytes)).toString('hex');assert.equal(sha,download.headers.get('x-content-sha256'));assert.equal(e.BUCKET.rows.size,0);});
