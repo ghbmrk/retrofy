@@ -61,6 +61,8 @@ Read [architecture and falsification experiments](docs/architecture.md), [benchm
 
 ## Steam library connection
 
-`python3 -m retrofy.cli steam-link --out local/steam-attempt-1` starts a local account-linking page. Sign in directly on Valve, then supply a Steam Web API key through the local password field to fetch visible library metadata. No API key or password is saved; no game files are downloaded or executed. This is a one-shot snapshot, not Steam Cloud/save sync. [Setup, privacy boundaries and verification status](docs/steam.md). Live authenticated sync still requires the user sign-in/key step.
+For phone access, use the private hosted connection at https://retrofy-steam.markizard.chatgpt.site . No Mac is required; source is in `hosted/`. A Steam Web API key is still required for visible-library retrieval and is not saved.
+
+For desktop-only research, `python3 -m retrofy.cli steam-link --out local/steam-attempt-1` starts a local account-linking page. Sign in directly on Valve, then supply a Steam Web API key through the local password field to fetch visible library metadata. No API key or password is saved; no game files are downloaded or executed. This is a one-shot snapshot, not Steam Cloud/save sync. [Setup, privacy boundaries and verification status](docs/steam.md). Live authenticated sync still requires the user sign-in/key step.
 
 [Stardew Valley flagship research target](docs/stardew-target.md) records the more ambitious candidate and first experiments; it is not a supported conversion.

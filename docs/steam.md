@@ -1,4 +1,14 @@
-# Local Steam linking and visible-library sync
+# Steam linking and visible-library sync
+
+## Hosted phone flow (preferred)
+
+Open https://retrofy-steam.markizard.chatgpt.site on your phone. The private service requires your owning ChatGPT account, then links Steam through Valve. Its HTTPS callback and R2 account/library storage run in the cloud; no Mac or localhost server is needed. Source is under `hosted/`.
+
+A service Steam API key has not been configured. After Steam sign-in, enter a Steam Web API key in the hosted HTTPS password field for each library sync. It is forwarded only to Valve and not saved. Steam visibility rules apply. Native deployment succeeded; authenticated Steam/library sync still requires user action and has not been demonstrated.
+
+The earlier localhost flow below remains available for desktop-only research. It cannot be used from a different device.
+
+## Local desktop flow
 
 Run `python3 -m retrofy.cli steam-link --out local/steam-attempt-1` from the checkout. A loopback-only service prints a random URL and expires after 30 minutes. Open that URL in a browser on the same computer and choose **Sign in on Steam**. The sign-in page is Valve's `steamcommunity.com` OpenID endpoint; Retrofy never receives a Steam password or Steam Guard code.
 
