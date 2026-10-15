@@ -23,6 +23,8 @@ The Steam service key grants service API access; OpenID proves identity but does
 
 ## Verification
 
-Run `node --test tests/worker.mjs`. Fifteen tests cover identity/origin checks, script-free markup and CSP, signed/encrypted token rejection, CSRF scope, concurrent single-use consumption and rate limits, mocked OpenID success/rejection, replay, cross-user callback rejection, missing service configuration, escaped transient library rendering, revocation, and incomplete library rejection. The in-memory R2 model implements conditional writes; these tests do not validate provider infrastructure, actual Valve login, production R2 concurrency or a real private library fetch. Independent review and authenticated live testing remain valuable.
+Run `node --test tests/worker.mjs`. Sixteen tests cover identity/origin checks, script-free markup and CSP, signed/encrypted token rejection, CSRF scope, concurrent single-use consumption and rate limits, mocked OpenID success/rejection, replay, cross-user callback rejection, missing service configuration, escaped transient library rendering, revocation, and incomplete library rejection. The in-memory R2 model implements conditional writes; these tests do not validate provider infrastructure, actual Valve login, production R2 concurrency or a real private library fetch. Independent review and authenticated live testing remain valuable.
 
 Primary protocol/storage references: https://steamcommunity.com/dev and https://developers.cloudflare.com/r2/api/workers/workers-api-reference/ .
+
+The form-action policy permits only this origin and `https://steamcommunity.com`; browsers can apply this restriction to redirects after form submission, so Steam must be explicit. Server-side login redirects still use the fixed Valve OpenID endpoint.

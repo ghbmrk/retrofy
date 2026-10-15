@@ -5,7 +5,7 @@ const LIMIT=8*1024*1024, LINK_TTL=3600000;
 const encoder=new TextEncoder();
 class Fault extends Error { constructor(message,status=400){super(message);this.status=status;} }
 const security={'cache-control':'no-store','referrer-policy':'same-origin','x-content-type-options':'nosniff',
- 'content-security-policy':"default-src 'none'; style-src 'self'; script-src 'none'; connect-src 'none'; img-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",
+ 'content-security-policy':"default-src 'none'; style-src 'self'; script-src 'none'; connect-src 'none'; img-src 'none'; form-action 'self' https://steamcommunity.com; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",
  'permissions-policy':'camera=(), microphone=(), geolocation=(), payment=()',
  'strict-transport-security':'max-age=31536000'};
 function response(body,status=200,headers={}) {return new Response(body,{status,headers:{...security,...headers}});}
