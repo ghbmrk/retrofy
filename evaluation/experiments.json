@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "experiments": [
+    {
+      "name": "first-link",
+      "outcome": "failed",
+      "observation": "Multiple definition of _reset",
+      "resolution": "rename reset_level"
+    },
+    {
+      "name": "framebuffer-initialization",
+      "outcome": "failed visual inspection",
+      "observation": "residual background tiles outside board",
+      "resolution": "clear full background map with LCD off"
+    },
+    {
+      "name": "maximum-board-update",
+      "before_rom_sha256": "91127f84b8ed1fe913b3d54f37d6b28f9a1ac6a27203d7ddab0164bbdf690aab",
+      "before_update_frames": [
+        11
+      ],
+      "after_rom_sha256": "5c5a0be164e57975e6054ba098fa2dca225cea209aca7b215197629ddfc77412",
+      "after_update_frames": [
+        2
+      ],
+      "measurement": "PyBoy 2.7.0 CGB; injected press to generation mailbox change, frame sampled",
+      "limitation": "includes input scheduling; not CPU cycles; same synthetic fixture only"
+    }
+  ]
+}

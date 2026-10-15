@@ -1,0 +1,16 @@
+{
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "host_c_vs_python_transitions": 35524,
+  "reachable_states": {
+    "push.xsb": 306,
+    "interactions.xsb": 6068,
+    "deadlock.xsb": 7
+  },
+  "random_seed": 420,
+  "random_boards": 100,
+  "moves_per_board": 100,
+  "metamorphic": "horizontal reflection with left/right inversion",
+  "scope": "synthetic mechanics conformance; no source-game comparison"
+}
