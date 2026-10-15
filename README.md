@@ -58,3 +58,9 @@ Repeat the last command for `interactions` and `max-board`, choosing fresh outpu
 - Format hints and the `controls` prefilter route research and reject obvious mismatches; neither accepts an executable for conversion. Missing evidence remains unresolved.
 
 Read [architecture and falsification experiments](docs/architecture.md), [benchmark protocol](docs/benchmarks.md), [evidence](evaluation/RESULTS.md), and [rights/access boundaries](docs/rights.md). The platform and original fixtures are MIT; that license grants no rights to user-supplied games.
+
+## Steam library connection
+
+`python3 -m retrofy.cli steam-link --out local/steam-attempt-1` starts a local account-linking page. Sign in directly on Valve, then supply a Steam Web API key through the local password field to fetch visible library metadata. No API key or password is saved; no game files are downloaded or executed. This is a one-shot snapshot, not Steam Cloud/save sync. [Setup, privacy boundaries and verification status](docs/steam.md). Live authenticated sync still requires the user sign-in/key step.
+
+[Stardew Valley flagship research target](docs/stardew-target.md) records the more ambitious candidate and first experiments; it is not a supported conversion.

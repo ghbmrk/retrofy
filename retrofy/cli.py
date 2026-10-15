@@ -18,6 +18,7 @@ def plan(data):
 def main():
     p=argparse.ArgumentParser(description='Local intake; never runs input games or uploads files')
     sub=p.add_subparsers(dest='cmd', required=True)
+    a=sub.add_parser('steam-link'); a.add_argument('--out',required=True); a.add_argument('--port',type=int,default=0)
     a=sub.add_parser('identify'); a.add_argument('input')
     a=sub.add_parser('controls'); a.add_argument('input')
     a=sub.add_parser('plan'); a.add_argument('input'); a.add_argument('--out',required=True)
@@ -27,6 +28,9 @@ def main():
     a.add_argument('--out',required=True); a.add_argument('--lcc',default=os.environ.get('GBDK_LCC','lcc'))
     args=p.parse_args()
     try:
+        if args.cmd=='steam-link':
+            from .steam import serve
+            serve(args.out,args.port); return
         if args.cmd=='identify':
             print(json.dumps(identify(args.input),indent=2)); return
         if args.cmd=='controls':
