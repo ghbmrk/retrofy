@@ -36,7 +36,7 @@ async function requestBody(request,limit){if(Number(request.headers.get('content
 async function streamText(body,limit){const reader=body.getReader();let total=0,parts=[];while(true){const {value,done}=await reader.read();if(done)break;total+=value.length;if(total>limit){await reader.cancel();throw new Fault('Response or request too large.',413);}parts.push(value);}const b=new Uint8Array(total);let i=0;for(const p of parts){b.set(p,i);i+=p.length;}return new TextDecoder().decode(b);}
 async function valve(remote,url,options={}){
  const u=new URL(url);if(!((u.origin==='https://steamcommunity.com'&&u.pathname==='/openid/login'&&!u.search)||(u.origin==='https://api.steampowered.com'&&u.pathname==='/IPlayerService/GetOwnedGames/v1/')))throw new Fault('Refused external destination.',502);
- let r;try{r=await remote(url,{...options,redirect:'error',signal:AbortSignal.timeout(15000)});}catch{throw new Fault('Valve could not be reached. Try again later.',502);}
+ let r;try{r=await remote(url,{...options,redirect:'manual',signal:AbortSignal.timeout(15000)});}catch{throw new Fault('Valve could not be reached. Try again later.',502);}
  if(!r.ok)throw new Fault('Valve rejected the request. Check service configuration or library visibility.',502);return streamText(r.body,LIMIT);
 }
 async function read(bucket,key){const obj=await bucket.get(key);return obj?obj.json():null;}
@@ -100,6 +100,12 @@ async function handle(request,env,remote=fetch){
  const url=new URL(request.url);
  if(url.origin!==env.SITE_ORIGIN||url.protocol!=='https:')return response('Unexpected origin.',421);
  if(url.pathname==='/health')return response(JSON.stringify({service:'retrofy-steam',security_revision:2,ready:!!env.SESSION_SECRET&&!!env.BUCKET,library_sync_configured:!!env.STEAM_WEB_API_KEY,personal_keys_accepted:false,library_storage:false,mac_required:false}),200,{'content-type':'application/json'});
+ if(url.pathname==='/health/steam'&&request.method==='GET'){
+  // Fixed credential-free probe; private Sites gateway still applies. Never forwards request data.
+  const results=[];
+  for(const [method,redirectMode] of [['GET','manual'],['POST','manual'],['POST','error']]){try{const r=await remote(OPENID,{method,redirect:redirectMode,signal:AbortSignal.timeout(10000),...(method==='POST'?{headers:{'content-type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'openid.ns':NS,'openid.mode':'check_authentication'}).toString()}:{} )});results.push({method,redirectMode,status:r.status,location:r.headers.get('location')?.split('?')[0]||null});await r.body?.cancel();}catch(e){results.push({method,redirectMode,error:String(e.name),detail:String(e.message).slice(0,300)});}}
+  return response(JSON.stringify({probe:'invalid-assertion-no-user-data',results}),200,{'content-type':'application/json'});
+ }
  const user=request.headers.get('oai-authenticated-user-id');if(!user)return response('<a href="/signin-with-chatgpt?return_to=%2F" target="_top">Sign in to your private Retrofy connection</a>',401,{'content-type':'text/html;charset=utf-8'});
  if(!env.SESSION_SECRET||!env.BUCKET)return response('Hosted connection not configured.',503);
  const owner=await hash(user),prefix='users/'+owner+'/';

@@ -8,4 +8,4 @@ Library metadata is rendered only for the request, with no saved snapshot. The l
 
 The old local CLI/server entry points are disabled. Legacy Python components remain for research tests and are not deployed. Never deploy them or ask users to enter API keys. No installation scanning, game downloading, purchase, game execution or Steam privacy changes occur. Library membership does not prove adaptation rights or GBC compatibility.
 
-Sixteen hosted tests use conditional-write storage models and mocked Valve responses. They establish application behavior under those models, not a security audit of Sites/Cloudflare/Valve or successful live authentication. Tests and reproducible build instructions are in `hosted/`.
+Seventeen hosted tests use conditional-write storage models and mocked Valve responses. They establish application behavior under those models, not a security audit of Sites/Cloudflare/Valve or successful live authentication. Tests and reproducible build instructions are in `hosted/`.
