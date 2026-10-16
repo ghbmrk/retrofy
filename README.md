@@ -6,6 +6,10 @@ Working today: strict single-board ASCII XSB intake → SHA-256 fingerprint → 
 
 **No existing commercial game has been converted or verified.** Included boards are original synthetic MIT conformance fixtures. The pipeline recovers their layout; their mechanics are declared, not inferred from an executable. It cannot establish fidelity to a particular Sokoban product. Three boards exercise one mechanics family, not broad generalization.
 
+## Native scene-generation research
+
+A [working next-scene-token experiment](evaluation/scene-tokens/RESULTS.md) runs a tiny trained integer predictor inside a 32 KiB native ROM. Three implementations share a 32-room synthetic world with mutable room state, A/B/D-pad controls and revisit checks. Each passed 1,028 exact-ROM scene checks; repeated builds match. The learned predictor has 640 weight bytes but needs repairs on 52 of 256 held-out sequences. The direct procedural baseline is smaller and faster. This is a bounded architecture experiment, not a commercial-game adaptation or an LLM on Game Boy Color. Source, three ROMs, emulator screenshots and reproducible commands are retained with the results.
+
 ## Run locally
 
 Python 3.9+ and a C compiler suffice for host tests. Run from a checkout:

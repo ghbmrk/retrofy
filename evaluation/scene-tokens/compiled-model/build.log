@@ -1,0 +1,11 @@
+model.h:34: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:58: warning 85: in function predict_0 unreferenced function argument : 'previous'
+model.h:72: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:123: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:149: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:171: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:194: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:217: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+model.h:236: warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+main.c:
+engine.c:

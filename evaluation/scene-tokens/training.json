@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "scope": "original synthetic next-scene-token experiment",
+  "model": "masked multiclass integer perceptron; teacher-forced training, free-running evaluation",
+  "model_weight_bytes": 640,
+  "weight_range": [
+    -10,
+    10
+  ],
+  "epochs": [
+    201,
+    0
+  ],
+  "counts": {
+    "training_sequences": 768,
+    "training_mismatches": 0,
+    "heldout_room_sequences": 256,
+    "heldout_room_mismatches": 52,
+    "exhaustive_context_sequences": 2048,
+    "exhaustive_context_mismatches": 104
+  },
+  "scene_tokens": 8,
+  "rooms": 32,
+  "mutable_bits_per_room": 4,
+  "raw_tilemap_bytes": 368640,
+  "unique_tilemaps": 192,
+  "deduplicated_tilemap_data_and_uint16_index_bytes": 71168,
+  "zlib9_tilemap_bytes": 3888,
+  "token_table_bytes": 8192,
+  "limits": [
+    "Not an LLM or learned game mechanics. The teacher and renderer are hand-written.",
+    "Held-out room IDs share the same synthetic mechanics; not cross-game transfer.",
+    "Exact factual-token validation contains duplicate teacher logic and must be charged to total implementation size.",
+    "A procedural implementation is a serious baseline, not just stored screens.",
+    "Data sizes exclude decoder/runtime/banking/padding; native builds supply separate totals.",
+    "zlib is a host-side data baseline only; no native decompressor is implemented.",
+    "Token autoregression is within a scene, not a learned temporal world model.",
+    "No proprietary game input, original-game equivalence or physical hardware test."
+  ]
+}

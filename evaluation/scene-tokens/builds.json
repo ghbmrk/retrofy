@@ -1,0 +1,92 @@
+{
+  "model": {
+    "rom_bytes": 32768,
+    "rom_sha256": "291bcbf5ce3d8ef624e111cf8e6fd8125175854ffac12894d8a6c00576629ecb",
+    "command": [
+      "lcc",
+      "-msm83:gb",
+      "-Wm-yc",
+      "-Wm-yt0",
+      "-Wm-yo2",
+      "-Wm-ya0",
+      "-Wm-ynSCENETOKENS",
+      "-Wl-m",
+      "-Wl-j",
+      "-DUSE_MODEL=1",
+      "-o",
+      "scene.gbc",
+      "main.c",
+      "engine.c"
+    ],
+    "compiled": true,
+    "emulator": true,
+    "build_seconds": 1.528,
+    "emulator_evidence": "model/checks.json",
+    "source_sha256": {
+      "main.c": "7eda20d40c3cd0a6714687d13f61296ca1d8c7e1a5316b440416d055d006de05",
+      "engine.c": "8b9910345a4c0d9a5ced1395913fd2f7cff6fb7527e618ed97d78085ddc4ca31",
+      "engine.h": "f080207b1fb6e5d61cb12e71713147f4b9084cc48b589f944d250e57d714b2ef",
+      "model.h": "e4f0077d8c6eefe2a49277d4c98eba798a5ba4450be532b93669d4de323d3b69"
+    }
+  },
+  "compiled-model": {
+    "rom_bytes": 32768,
+    "rom_sha256": "6ab79935d04cc67d3127f286a10a6fd5692ae1fd8cd7a87c00b4161692f693ce",
+    "command": [
+      "lcc",
+      "-msm83:gb",
+      "-Wm-yc",
+      "-Wm-yt0",
+      "-Wm-yo2",
+      "-Wm-ya0",
+      "-Wm-ynSCENETOKENS",
+      "-Wl-m",
+      "-Wl-j",
+      "-DUSE_MODEL=2",
+      "-o",
+      "scene.gbc",
+      "main.c",
+      "engine.c"
+    ],
+    "compiled": true,
+    "emulator": true,
+    "build_seconds": 2.784,
+    "emulator_evidence": "compiled-model/checks.json",
+    "source_sha256": {
+      "main.c": "7eda20d40c3cd0a6714687d13f61296ca1d8c7e1a5316b440416d055d006de05",
+      "engine.c": "8b9910345a4c0d9a5ced1395913fd2f7cff6fb7527e618ed97d78085ddc4ca31",
+      "engine.h": "f080207b1fb6e5d61cb12e71713147f4b9084cc48b589f944d250e57d714b2ef",
+      "model.h": "e4f0077d8c6eefe2a49277d4c98eba798a5ba4450be532b93669d4de323d3b69"
+    }
+  },
+  "procedural": {
+    "rom_bytes": 32768,
+    "rom_sha256": "499a900d9807ff8ef04b09dcdf65182dff71f730273fd29f820ccf96e9f63f48",
+    "command": [
+      "lcc",
+      "-msm83:gb",
+      "-Wm-yc",
+      "-Wm-yt0",
+      "-Wm-yo2",
+      "-Wm-ya0",
+      "-Wm-ynSCENETOKENS",
+      "-Wl-m",
+      "-Wl-j",
+      "-DUSE_MODEL=0",
+      "-o",
+      "scene.gbc",
+      "main.c",
+      "engine.c"
+    ],
+    "compiled": true,
+    "emulator": true,
+    "build_seconds": 1.061,
+    "emulator_evidence": "procedural/checks.json",
+    "source_sha256": {
+      "main.c": "7eda20d40c3cd0a6714687d13f61296ca1d8c7e1a5316b440416d055d006de05",
+      "engine.c": "8b9910345a4c0d9a5ced1395913fd2f7cff6fb7527e618ed97d78085ddc4ca31",
+      "engine.h": "f080207b1fb6e5d61cb12e71713147f4b9084cc48b589f944d250e57d714b2ef",
+      "model.h": "e4f0077d8c6eefe2a49277d4c98eba798a5ba4450be532b93669d4de323d3b69"
+    }
+  }
+}
