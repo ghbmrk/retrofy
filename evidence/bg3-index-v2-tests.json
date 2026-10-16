@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "scope": "synthetic archive-index tests; no BG3 payloads or proprietary inputs",
+  "lspk_reference": "Norbyte/lslib@6f5f6987d10d8485876b8368431c948e4dea4f83",
+  "index_tests": 12,
+  "intake_tests": 9,
+  "hosted_tests": 18,
+  "independent_oracle": {
+    "name": "python-lz4",
+    "version": "4.4.4",
+    "streams": 21,
+    "skip": false,
+    "only_for_development": true
+  },
+  "malformed_lz4_cases": 500,
+  "checked": [
+    "literal and overlapping LZ4 matches",
+    "independent byte-offset fixture",
+    "no directory-referenced payload reads",
+    "unsupported/solid formats",
+    "invalid bounds/names/counts/parts",
+    "read/decode/time budgets",
+    "safe aggregate reporting",
+    "metadata privacy",
+    "private new report directories",
+    "download digest"
+  ],
+  "not_established": [
+    "real BG3 v18 directory compatibility",
+    "effective patch load order",
+    "semantic recovery",
+    "full-file integrity",
+    "GBC compression ratio or ROM feasibility",
+    "native execution",
+    "physical Chromatic fidelity"
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "host": {
+    "exact_unoverlaid_scenes": 32,
+    "exact_overlay_contexts": 1024,
+    "tile_comparisons": 380160
+  },
+  "native": {
+    "variant": "raw",
+    "rom_sha256": "1965edd3e74f5a057b14cef2839c22883897a2c0ad48be91bac938f3dbcdb5ab",
+    "pyboy": "2.7.0",
+    "frames": 4379,
+    "scene_checks": 1028,
+    "token_checks": 8224,
+    "tilemap_checks": 370080,
+    "injected_scene_contexts": 1024,
+    "interactive": [
+      "Chest/key and NPC state persist across departure and return using controller inputs.",
+      "Locked exit refuses movement without key and allows it with key (seeded state).",
+      "Conflicting directions ignored; held direction performs one step."
+    ],
+    "input_to_scene_frames": {
+      "min": 1,
+      "max": 2
+    },
+    "input_to_scene_groups": {
+      "full": {
+        "samples": 1030,
+        "min": 2,
+        "max": 2
+      },
+      "cached": {
+        "samples": 42,
+        "min": 1,
+        "max": 1
+      }
+    },
+    "inference_timer_ticks_1024_tcycles": {
+      "min": 4,
+      "max": 4,
+      "overflows": 0
+    },
+    "max_repairs_in_one_scene": 0,
+    "stage_timer_ticks_1024_tcycles": {
+      "render": {
+        "min": 19,
+        "max": 19,
+        "overflows": 0
+      },
+      "upload": {
+        "min": 43,
+        "max": 79,
+        "overflows": 0
+      }
+    },
+    "linker": {
+      "areas": {
+        "_CODE": {
+          "address": 512,
+          "bytes": 15357
+        },
+        "_HEADER0": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADER1": {
+          "address": 0,
+          "bytes": 5
+        },
+        "_HEADER2": {
+          "address": 0,
+          "bytes": 7
+        },
+        "_HEADER3": {
+          "address": 0,
+          "bytes": 8
+        },
+        "_HEADER4": {
+          "address": 0,
+          "bytes": 96
+        },
+        "_HEADER5": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADER6": {
+          "address": 0,
+          "bytes": 2
+        },
+        "_HEADER7": {
+          "address": 0,
+          "bytes": 48
+        },
+        "_HEADER8": {
+          "address": 0,
+          "bytes": 6
+        },
+        "_HEADER9": {
+          "address": 0,
+          "bytes": 3
+        },
+        "_HEADERa": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADERb": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADERc": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADERd": {
+          "address": 0,
+          "bytes": 2
+        },
+        "_HEADERe": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADERf": {
+          "address": 0,
+          "bytes": 1
+        },
+        "_HEADER10": {
+          "address": 0,
+          "bytes": 2
+        },
+        "_HEADER11": {
+          "address": 0,
+          "bytes": 171
+        },
+        "_HOME": {
+          "address": 15869,
+          "bytes": 2361
+        },
+        "_INITIALIZER": {
+          "address": 18230,
+          "bytes": 7
+        },
+        "_GSINIT": {
+          "address": 18237,
+          "bytes": 12
+        },
+        "_GSFINAL": {
+          "address": 18249,
+          "bytes": 1
+        },
+        "_DATA": {
+          "address": 49312,
+          "bytes": 1131
+        },
+        "_INITIALIZED": {
+          "address": 50443,
+          "bytes": 7
+        },
+        "_HRAM": {
+          "address": 65408,
+          "bytes": 19
+        },
+        "_FONT_HEADER0": {
+          "address": 0,
+          "bytes": 3
+        },
+        "_HEADER_LCD0": {
+          "address": 0,
+          "bytes": 3
+        }
+      },
+      "linked_rom_section_bytes": 18101,
+      "linked_rom_extent_bytes": 18250,
+      "static_data_and_hram_bytes": 1157,
+      "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+    },
+    "limits": [
+      "Injected contexts are developer tests, not organically reached states.",
+      "Cached movement skips generation; timer samples describe the last full generation.",
+      "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+      "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+      "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+      "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+    ],
+    "video": {
+      "vram_scenes": 1028,
+      "sampled_lcd_frames": 4295,
+      "dma_start_lines": [
+        146,
+        146
+      ],
+      "dma_end_lines": [
+        147,
+        147
+      ]
+    }
+  }
+}

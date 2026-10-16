@@ -1,0 +1,11 @@
+# Rights and access boundaries
+
+A local installation proves possession of particular bytes; it does not by itself establish permission to extract, modify, adapt or redistribute them. Platform MIT licensing applies to original platform code and fixtures only. Asset, level, source, executable, trademark and distribution permissions may differ. No legal determination is automated.
+
+Local intake is read-only and bounded. Input symlinks are refused by the basic intake; this is not a hardened defense against a concurrent hostile local process. Identification streams at most 64 MiB and does not execute inputs. The XSB adapter reads at most 64 KiB. Archives, encrypted content, DRM bypass, network services, original-game execution and runtime instrumentation are not implemented. Do not run untrusted games through a shell or install arbitrary analysis plugins in the host session.
+
+Every build requires a local rights ledger for access, adaptation and redistribution. Missing/blank assertions fail before compiler execution. Assertions remain user responsibility; nonempty text is not verified permission. Plans and records include recovered content and must stay private when the material is proprietary. Input version hashes and provenance are bound to each attempt. Never strip source provenance to make a derivative appear independently created.
+
+Keep actual games, captures, generated assets, level IR, ROMs, rights documents and build records under ignored `local/` and `build/` directories, preferably outside the checkout for sensitive inputs. `.gitignore` is an accident-prevention mechanism, not a security boundary. Review the staged diff and archive contents before publication. The public repository contains only original code, synthetic fixtures, and fixture-derived evidence. CI never accepts user input or uploads generated ROMs.
+
+Future isolated runtime adapters must request only needed access, disable networking by default, bind captures to exact hashes, and refuse unresolved access boundaries. Permission to inspect locally is distinct from permission to publish a trace or extracted asset. Human review is mandatory when the basis is unresolved. Retain failure records locally without copied proprietary payloads in public issues.

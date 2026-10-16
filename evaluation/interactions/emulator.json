@@ -1,0 +1,2431 @@
+{
+  "rom_sha256": "21830f5d03764af3dad2daf69334cb10fae9980dd402fb9d6a2ce8f7e91e372c",
+  "pyboy": "2.7.0",
+  "mode": "CGB",
+  "frames": 1310,
+  "checks": [
+    {
+      "label": "boot",
+      "frame": 78,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "solution-0",
+      "frame": 82,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "solution-1",
+      "frame": 86,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "solution-2",
+      "frame": 90,
+      "player": 19,
+      "boxes": [
+        10,
+        20
+      ]
+    },
+    {
+      "label": "solution-3",
+      "frame": 94,
+      "player": 20,
+      "boxes": [
+        10,
+        21
+      ]
+    },
+    {
+      "label": "solution-4",
+      "frame": 98,
+      "player": 28,
+      "boxes": [
+        10,
+        21
+      ]
+    },
+    {
+      "label": "solution-5",
+      "frame": 102,
+      "player": 29,
+      "boxes": [
+        10,
+        21
+      ]
+    },
+    {
+      "label": "solution-6",
+      "frame": 106,
+      "player": 21,
+      "boxes": [
+        10,
+        13
+      ]
+    },
+    {
+      "label": "undo",
+      "frame": 110,
+      "player": 29,
+      "boxes": [
+        10,
+        21
+      ]
+    },
+    {
+      "label": "restart",
+      "frame": 115,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "held-right-30",
+      "frame": 145,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "two-directions-ignored",
+      "frame": 159
+    },
+    {
+      "label": "seeded-0-D",
+      "frame": 168,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-1-D",
+      "frame": 172,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-2-R",
+      "frame": 176,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-3-R",
+      "frame": 180,
+      "player": 37,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-4-U",
+      "frame": 184,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-5-U",
+      "frame": 188,
+      "player": 21,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-6-U",
+      "frame": 192,
+      "player": 13,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-7-B",
+      "frame": 196,
+      "player": 21,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-8-D",
+      "frame": 200,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-9-B",
+      "frame": 204,
+      "player": 21,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-10-R",
+      "frame": 208,
+      "player": 22,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-11-R",
+      "frame": 212,
+      "player": 22,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-12-B",
+      "frame": 216,
+      "player": 21,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-13-A",
+      "frame": 221,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-14-A",
+      "frame": 226,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-15-A",
+      "frame": 231,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-16-A",
+      "frame": 236,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-17-A",
+      "frame": 241,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-18-R",
+      "frame": 245,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-19-D",
+      "frame": 249,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-20-R",
+      "frame": 253,
+      "player": 37,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-21-A",
+      "frame": 258,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-22-U",
+      "frame": 262,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-23-D",
+      "frame": 266,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-24-B",
+      "frame": 270,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-25-D",
+      "frame": 274,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-26-U",
+      "frame": 278,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-27-A",
+      "frame": 283,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-28-L",
+      "frame": 287,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-29-U",
+      "frame": 291,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-30-L",
+      "frame": 295,
+      "player": 17,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-31-A",
+      "frame": 300,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-32-D",
+      "frame": 304,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-33-L",
+      "frame": 308,
+      "player": 34,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-34-B",
+      "frame": 312,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-35-R",
+      "frame": 316,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-36-D",
+      "frame": 320,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-37-U",
+      "frame": 324,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-38-U",
+      "frame": 328,
+      "player": 20,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-39-A",
+      "frame": 333,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-40-U",
+      "frame": 337,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-41-B",
+      "frame": 341,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-42-R",
+      "frame": 345,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-43-R",
+      "frame": 349,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-44-D",
+      "frame": 353,
+      "player": 37,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-45-U",
+      "frame": 357,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-46-A",
+      "frame": 362,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-47-B",
+      "frame": 376,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-48-A",
+      "frame": 381,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-49-R",
+      "frame": 385,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-50-R",
+      "frame": 389,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-51-U",
+      "frame": 393,
+      "player": 21,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-52-U",
+      "frame": 397,
+      "player": 13,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-53-A",
+      "frame": 402,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-54-U",
+      "frame": 406,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-55-D",
+      "frame": 410,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-56-B",
+      "frame": 414,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-57-U",
+      "frame": 418,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-58-R",
+      "frame": 422,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-59-B",
+      "frame": 426,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-60-D",
+      "frame": 430,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-61-R",
+      "frame": 434,
+      "player": 28,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-62-U",
+      "frame": 438,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-63-R",
+      "frame": 442,
+      "player": 21,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-64-B",
+      "frame": 446,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-65-D",
+      "frame": 450,
+      "player": 28,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-66-B",
+      "frame": 454,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-67-L",
+      "frame": 458,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-68-A",
+      "frame": 463,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-69-D",
+      "frame": 467,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-70-R",
+      "frame": 471,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-71-D",
+      "frame": 475,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-72-A",
+      "frame": 480,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-73-D",
+      "frame": 484,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-74-U",
+      "frame": 488,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-75-L",
+      "frame": 492,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-76-U",
+      "frame": 496,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-77-U",
+      "frame": 500,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-78-R",
+      "frame": 504,
+      "player": 19,
+      "boxes": [
+        10,
+        20
+      ]
+    },
+    {
+      "label": "seeded-79-B",
+      "frame": 508,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-80-L",
+      "frame": 512,
+      "player": 17,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-81-D",
+      "frame": 516,
+      "player": 25,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-82-R",
+      "frame": 520,
+      "player": 26,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-83-B",
+      "frame": 524,
+      "player": 25,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-84-A",
+      "frame": 529,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-85-R",
+      "frame": 533,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-86-R",
+      "frame": 537,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-87-A",
+      "frame": 542,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-88-U",
+      "frame": 546,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-89-L",
+      "frame": 550,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-90-D",
+      "frame": 554,
+      "player": 26,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-91-U",
+      "frame": 558,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-92-A",
+      "frame": 563,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-93-B",
+      "frame": 577,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-94-L",
+      "frame": 581,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-95-D",
+      "frame": 585,
+      "player": 34,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-96-D",
+      "frame": 589,
+      "player": 34,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-97-R",
+      "frame": 593,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-98-A",
+      "frame": 598,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-99-A",
+      "frame": 603,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-100-R",
+      "frame": 607,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-101-B",
+      "frame": 611,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-102-R",
+      "frame": 615,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-103-L",
+      "frame": 619,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-104-D",
+      "frame": 623,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-105-A",
+      "frame": 628,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-106-A",
+      "frame": 633,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-107-B",
+      "frame": 647,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-108-D",
+      "frame": 651,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-109-R",
+      "frame": 655,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-110-A",
+      "frame": 660,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-111-U",
+      "frame": 664,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-112-A",
+      "frame": 669,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-113-R",
+      "frame": 673,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-114-B",
+      "frame": 677,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-115-U",
+      "frame": 681,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-116-R",
+      "frame": 685,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-117-R",
+      "frame": 689,
+      "player": 21,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-118-B",
+      "frame": 693,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-119-U",
+      "frame": 697,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-120-D",
+      "frame": 701,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-121-U",
+      "frame": 705,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-122-R",
+      "frame": 709,
+      "player": 13,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-123-L",
+      "frame": 713,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-124-L",
+      "frame": 717,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-125-A",
+      "frame": 722,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-126-U",
+      "frame": 726,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-127-U",
+      "frame": 730,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-128-U",
+      "frame": 734,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-129-B",
+      "frame": 738,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-130-U",
+      "frame": 742,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-131-A",
+      "frame": 747,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-132-U",
+      "frame": 751,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-133-D",
+      "frame": 755,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-134-B",
+      "frame": 759,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-135-B",
+      "frame": 773,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-136-D",
+      "frame": 777,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-137-L",
+      "frame": 781,
+      "player": 26,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-138-L",
+      "frame": 785,
+      "player": 25,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-139-L",
+      "frame": 789,
+      "player": 25,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-140-U",
+      "frame": 793,
+      "player": 17,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-141-U",
+      "frame": 797,
+      "player": 9,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-142-D",
+      "frame": 801,
+      "player": 17,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-143-A",
+      "frame": 806,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-144-L",
+      "frame": 810,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-145-A",
+      "frame": 815,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-146-B",
+      "frame": 829,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-147-U",
+      "frame": 833,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-148-B",
+      "frame": 837,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-149-L",
+      "frame": 841,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-150-A",
+      "frame": 846,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-151-L",
+      "frame": 850,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-152-R",
+      "frame": 854,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-153-B",
+      "frame": 858,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-154-L",
+      "frame": 862,
+      "player": 25,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-155-B",
+      "frame": 866,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-156-R",
+      "frame": 870,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-157-U",
+      "frame": 874,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-158-D",
+      "frame": 878,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-159-A",
+      "frame": 883,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-160-L",
+      "frame": 887,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-161-L",
+      "frame": 891,
+      "player": 25,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-162-A",
+      "frame": 896,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-163-L",
+      "frame": 900,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-164-D",
+      "frame": 904,
+      "player": 34,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-165-A",
+      "frame": 909,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-166-U",
+      "frame": 913,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-167-D",
+      "frame": 917,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-168-D",
+      "frame": 921,
+      "player": 35,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-169-B",
+      "frame": 925,
+      "player": 27,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-170-D",
+      "frame": 929,
+      "player": 35,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-171-R",
+      "frame": 933,
+      "player": 36,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-172-U",
+      "frame": 937,
+      "player": 28,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-173-D",
+      "frame": 941,
+      "player": 36,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-174-D",
+      "frame": 945,
+      "player": 36,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-175-B",
+      "frame": 949,
+      "player": 28,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-176-U",
+      "frame": 953,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-177-D",
+      "frame": 957,
+      "player": 28,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-178-B",
+      "frame": 961,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-179-R",
+      "frame": 965,
+      "player": 21,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-180-A",
+      "frame": 970,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-181-L",
+      "frame": 974,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-182-L",
+      "frame": 978,
+      "player": 25,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-183-U",
+      "frame": 982,
+      "player": 17,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-184-U",
+      "frame": 986,
+      "player": 9,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-185-B",
+      "frame": 990,
+      "player": 17,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-186-D",
+      "frame": 994,
+      "player": 25,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-187-D",
+      "frame": 998,
+      "player": 33,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-188-B",
+      "frame": 1002,
+      "player": 25,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-189-A",
+      "frame": 1007,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-190-R",
+      "frame": 1011,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-191-L",
+      "frame": 1015,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-192-D",
+      "frame": 1019,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-193-R",
+      "frame": 1023,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-194-R",
+      "frame": 1027,
+      "player": 37,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-195-U",
+      "frame": 1031,
+      "player": 29,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-196-A",
+      "frame": 1036,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-197-R",
+      "frame": 1040,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-198-A",
+      "frame": 1045,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-199-L",
+      "frame": 1049,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-200-U",
+      "frame": 1053,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-201-U",
+      "frame": 1057,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-202-B",
+      "frame": 1061,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-203-U",
+      "frame": 1065,
+      "player": 18,
+      "boxes": [
+        10,
+        19
+      ]
+    },
+    {
+      "label": "seeded-204-B",
+      "frame": 1069,
+      "player": 26,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-205-A",
+      "frame": 1074,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-206-B",
+      "frame": 1088,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-207-U",
+      "frame": 1092,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-208-R",
+      "frame": 1096,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-209-U",
+      "frame": 1100,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-210-L",
+      "frame": 1104,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-211-D",
+      "frame": 1108,
+      "player": 19,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-212-B",
+      "frame": 1112,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-213-U",
+      "frame": 1116,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-214-R",
+      "frame": 1120,
+      "player": 12,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-215-U",
+      "frame": 1124,
+      "player": 12,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-216-D",
+      "frame": 1128,
+      "player": 20,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-217-U",
+      "frame": 1132,
+      "player": 12,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-218-U",
+      "frame": 1136,
+      "player": 12,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-219-U",
+      "frame": 1140,
+      "player": 12,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-220-L",
+      "frame": 1144,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-221-A",
+      "frame": 1149,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-222-R",
+      "frame": 1153,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-223-D",
+      "frame": 1157,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-224-U",
+      "frame": 1161,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-225-B",
+      "frame": 1165,
+      "player": 36,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-226-A",
+      "frame": 1170,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-227-B",
+      "frame": 1184,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-228-U",
+      "frame": 1188,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-229-L",
+      "frame": 1192,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-230-L",
+      "frame": 1196,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-231-D",
+      "frame": 1200,
+      "player": 26,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-232-U",
+      "frame": 1204,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-233-D",
+      "frame": 1208,
+      "player": 26,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-234-B",
+      "frame": 1212,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-235-R",
+      "frame": 1216,
+      "player": 19,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-236-B",
+      "frame": 1220,
+      "player": 18,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-237-D",
+      "frame": 1224,
+      "player": 26,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-238-D",
+      "frame": 1228,
+      "player": 34,
+      "boxes": [
+        11,
+        17
+      ]
+    },
+    {
+      "label": "seeded-239-A",
+      "frame": 1233,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-240-A",
+      "frame": 1238,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-241-B",
+      "frame": 1252,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-242-A",
+      "frame": 1257,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-243-U",
+      "frame": 1261,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-244-U",
+      "frame": 1265,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-245-B",
+      "frame": 1269,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-246-D",
+      "frame": 1273,
+      "player": 35,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-247-A",
+      "frame": 1278,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-248-R",
+      "frame": 1282,
+      "player": 28,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-249-L",
+      "frame": 1286,
+      "player": 27,
+      "boxes": [
+        18,
+        19
+      ]
+    },
+    {
+      "label": "seeded-250-U",
+      "frame": 1290,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-251-U",
+      "frame": 1294,
+      "player": 19,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-252-R",
+      "frame": 1298,
+      "player": 20,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-253-U",
+      "frame": 1302,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    },
+    {
+      "label": "seeded-254-L",
+      "frame": 1306,
+      "player": 11,
+      "boxes": [
+        10,
+        18
+      ]
+    },
+    {
+      "label": "seeded-255-B",
+      "frame": 1310,
+      "player": 12,
+      "boxes": [
+        11,
+        18
+      ]
+    }
+  ],
+  "solution_update_frames": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "limitations": [
+    "frame latency is not CPU-cycle profiling",
+    "no original-game differential",
+    "no human usability assessment",
+    "no physical hardware",
+    "audio disabled"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "scope": "finite synthetic transition systems, not extracted BG3 behavior",
+  "claim": "Observation and successor-class agreement establish all-length trace agreement for this complete finite model and action alphabet.",
+  "limits": [
+    "The observation contract must include essential cues and decisions.",
+    "Missing original state/actions invalidate transfer of this proof.",
+    "No source-state-to-quotient mapping is included in ROM-byte counts.",
+    "A direct native implementation may be smaller than either table.",
+    "No original game, native ROM or hardware performance is evaluated."
+  ],
+  "results": [
+    {
+      "variant": "cosmetic_only_timer",
+      "source_states": 4096,
+      "quotient_states": 256,
+      "refinement_rounds": 1,
+      "universal_transition_checks": 16384,
+      "source_table_bytes": 36864,
+      "quotient_table_bytes": 2304,
+      "quotient_sha256": "b05570e42807353b21e0aff0920ac9551b596e91492e2fe10b12fcc4c9c99f39",
+      "current_observation_only_partition_is_sound": true,
+      "runtime_code_ram_cycles_and_state_mapping": "unmeasured; excluded from table-byte counts"
+    },
+    {
+      "variant": "latent_gameplay_timer",
+      "source_states": 4096,
+      "quotient_states": 2176,
+      "refinement_rounds": 17,
+      "universal_transition_checks": 16384,
+      "source_table_bytes": 36864,
+      "quotient_table_bytes": 19584,
+      "quotient_sha256": "b3dad3d233415b81b13170528f1d6bf1997c79d250fcde265d0fc4e9b489faa2",
+      "current_observation_only_partition_is_sound": false,
+      "runtime_code_ram_cycles_and_state_mapping": "unmeasured; excluded from table-byte counts"
+    }
+  ]
+}

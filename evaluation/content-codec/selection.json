@@ -1,0 +1,193 @@
+{
+  "schema": 1,
+  "status": "synthetic_representation_evidence_only",
+  "budgets": {
+    "full_scene_frames": 4,
+    "cached_update_frames": 2
+  },
+  "corpora": {
+    "shared": {
+      "selected": "patch",
+      "frontier": [
+        "raw",
+        "packed",
+        "patch"
+      ],
+      "variants": {
+        "raw": {
+          "linked_rom_extent_bytes": 18250,
+          "data_bytes": 11586,
+          "heldout_payload_bytes": 2880,
+          "full_frames": 2,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "packed": {
+          "linked_rom_extent_bytes": 11224,
+          "data_bytes": 4386,
+          "heldout_payload_bytes": 1080,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "rle": {
+          "linked_rom_extent_bytes": 16209,
+          "data_bytes": 9462,
+          "heldout_payload_bytes": 2354,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "lz": {
+          "linked_rom_extent_bytes": 14788,
+          "data_bytes": 7980,
+          "heldout_payload_bytes": 1976,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch": {
+          "linked_rom_extent_bytes": 8653,
+          "data_bytes": 1466,
+          "heldout_payload_bytes": 320,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch-fast": {
+          "linked_rom_extent_bytes": 8870,
+          "data_bytes": 1634,
+          "heldout_payload_bytes": 320,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        }
+      }
+    },
+    "novel": {
+      "selected": "patch",
+      "frontier": [
+        "raw",
+        "packed",
+        "patch"
+      ],
+      "variants": {
+        "raw": {
+          "linked_rom_extent_bytes": 18250,
+          "data_bytes": 11586,
+          "heldout_payload_bytes": 2880,
+          "full_frames": 2,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "packed": {
+          "linked_rom_extent_bytes": 11224,
+          "data_bytes": 4386,
+          "heldout_payload_bytes": 1080,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "rle": {
+          "linked_rom_extent_bytes": 16140,
+          "data_bytes": 9393,
+          "heldout_payload_bytes": 2285,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "lz": {
+          "linked_rom_extent_bytes": 14919,
+          "data_bytes": 8111,
+          "heldout_payload_bytes": 2107,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch": {
+          "linked_rom_extent_bytes": 9773,
+          "data_bytes": 2586,
+          "heldout_payload_bytes": 1440,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch-fast": {
+          "linked_rom_extent_bytes": 9990,
+          "data_bytes": 2754,
+          "heldout_payload_bytes": 1440,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        }
+      }
+    },
+    "entropy": {
+      "selected": "packed",
+      "frontier": [
+        "raw",
+        "packed"
+      ],
+      "variants": {
+        "raw": {
+          "linked_rom_extent_bytes": 18250,
+          "data_bytes": 11586,
+          "heldout_payload_bytes": 2880,
+          "full_frames": 2,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "packed": {
+          "linked_rom_extent_bytes": 11224,
+          "data_bytes": 4386,
+          "heldout_payload_bytes": 1080,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "rle": {
+          "linked_rom_extent_bytes": 16031,
+          "data_bytes": 9284,
+          "heldout_payload_bytes": 2292,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "lz": {
+          "linked_rom_extent_bytes": 15323,
+          "data_bytes": 8515,
+          "heldout_payload_bytes": 2128,
+          "full_frames": 3,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch": {
+          "linked_rom_extent_bytes": 13014,
+          "data_bytes": 5827,
+          "heldout_payload_bytes": 1440,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        },
+        "patch-fast": {
+          "linked_rom_extent_bytes": 13063,
+          "data_bytes": 5827,
+          "heldout_payload_bytes": 1440,
+          "full_frames": 4,
+          "cached_frames": 1,
+          "measured_gate_pass": true
+        }
+      }
+    }
+  },
+  "unresolved": [
+    "Real-game behavior and asset recovery",
+    "Delayed cross-room causal dependencies beyond the inherited kernel",
+    "Human readability/feel",
+    "Independent evaluation",
+    "Physical Chromatic execution",
+    "Banked large-world scalability",
+    "Audio and battery saves",
+    "Stack high-water"
+  ]
+}

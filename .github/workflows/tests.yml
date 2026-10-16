@@ -1,0 +1,15 @@
+name: public-conformance
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  host-specification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m unittest discover -s tests -v
+# No user intake, uploads, original binaries, proprietary levels or generated ROMs.
+# This job verifies the host specification/kernel only, not an emulator or device.

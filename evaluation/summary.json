@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "date": "2026-10-15",
+  "host": "macOS arm64",
+  "gbdk": "4.5.0",
+  "pyboy": "2.7.0",
+  "existing_games_evaluated": 0,
+  "closed_source_games_evaluated": 0,
+  "held_out_games_evaluated": 0,
+  "physical_tests": 0,
+  "human_effort_minutes": null,
+  "cpu_cycles": null,
+  "peak_stack": null,
+  "fixtures": {
+    "push": {
+      "rom_sha256": "efd29763bb9133d3316006a59a7e76700212c97f999777a88e46b6e253996ffc",
+      "rom_bytes": 32768,
+      "input_sha256": "b87f9ab337b21770e4612b2986e806e4eac6d5757f6e8d699e9025c34e4705ca",
+      "checks": 263,
+      "frames": 1289,
+      "solution_update_frames": [
+        2,
+        2
+      ]
+    },
+    "interactions": {
+      "rom_sha256": "21830f5d03764af3dad2daf69334cb10fae9980dd402fb9d6a2ce8f7e91e372c",
+      "rom_bytes": 32768,
+      "input_sha256": "a3ae1eadd8cb2f69624284babcf340837ae7b1402aa198f28bea8b8d7e70dd37",
+      "checks": 268,
+      "frames": 1310,
+      "solution_update_frames": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "max-board": {
+      "rom_sha256": "5c5a0be164e57975e6054ba098fa2dca225cea209aca7b215197629ddfc77412",
+      "rom_bytes": 32768,
+      "input_sha256": "c73a488a4602d6d24db096a1238c45c0b3773b8139c06ffc2215f3bb5e902551",
+      "checks": 262,
+      "frames": 1659,
+      "solution_update_frames": [
+        2
+      ]
+    },
+    "crowded": {
+      "rom_sha256": "9e5a200c6b8a25d1e2e60cad66e15406b0ad9c1fe08b333570da515cee6bc5bf",
+      "rom_bytes": 32768,
+      "input_sha256": "e188abe4f3b02b36f82b91c6210531d9580200ce649b243fe6d95cfe3995078c",
+      "checks": 262,
+      "frames": 1659,
+      "solution_update_frames": [
+        2
+      ]
+    }
+  },
+  "totals": {
+    "roms_compiled": 4,
+    "emulator_state_and_control_checks": 1055,
+    "emulator_frames": 5917,
+    "mechanics_families": 1
+  }
+}
