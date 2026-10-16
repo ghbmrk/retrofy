@@ -64,3 +64,5 @@ Read [architecture and falsification experiments](docs/architecture.md), [benchm
 Use the [private hosted connection](https://retrofy-steam.markizard.chatgpt.site) on your phone. No Mac is required. Revision 2 accepts no personal API keys and stores no library snapshots. Steam identity uses an encrypted, revocable one-hour cookie; server-side state is limited to pseudonymous challenges, rate counters and revocation metadata. Source and the threat model are under `hosted/`.
 
 Library lookup requires an operator-managed Steam API key, currently not configured. Login is available; library sync remains disabled. The legacy local login entry points are disabled. [Setup and verification limits](docs/steam.md).
+
+The current flagship research direction is [radical behavioral reconstruction](docs/ambition-first.md), working backward from BG3 rather than compressing its installation. [SteamOS index reconnaissance v2](hosted/intake/README.txt) is an input-analysis tool, not a game converter. Exact synthetic decision-graph and causal-state reductions include explicit negative controls and do not establish a BG3 compression factor.

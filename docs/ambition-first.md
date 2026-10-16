@@ -49,3 +49,35 @@ Run `python3 experiments/semantic_compaction.py`; deterministic output is in `ev
 - These are representation-data sizes only. The selector, decoder code, bank metadata, native execution time and working RAM are not measured. A short native function may beat both representations. The synthetic rules' repetition was chosen to test sharing, not sampled from BG3; no game-size compression factor follows.
 
 This establishes a bounded exact sharing mechanism and an explicit failure case. It establishes no automatic behavioral recovery, full-state scaling, perceptual fidelity, human-effort reduction, real-game conversion, independent evaluation or physical Chromatic result.
+
+## Radical reconstruction, not installation compression
+
+The installation is not the object to squeeze into a cartridge. The object is a new native program whose observable decisions, rules, authored consequences and essential cues satisfy an explicitly approved contract. A 240 GB installation size says little about the minimal description of that contract; it also supplies no evidence that the contract fits. Geometry, renderer code, animation, audio and authored prose have very different information and execution costs. Replacing presentation or omitting content is a declared adaptation decision, not lossless compression.
+
+Work backward through four quantities:
+
+1. **Necessary information:** unique authored choices/content and the rules needed to produce future outcomes. Do not count the original textures as a lower bound on rule storage, or assume unique prose can be synthesized without storing its information somewhere.
+2. **Necessary distinctions between states:** merge states only when the preserved observations and all relevant future action outcomes agree. A hidden quest flag may be invisible for hours yet still be indispensable. Reachability from a single save is not permission to delete other campaign branches.
+3. **A compact generative implementation:** factor shared predicates/effects, compile sparse event dependencies and bounded integer state, specialize immutable content, and compare native kernels, bytecode, decision graphs and tables. A neural representation competes on total bytes and execution cost; its weights do not make information free.
+4. **Hardware execution:** include decoder/interpreter code, data indexes, state encoding, peak RAM, cartridge banking, worst-case cycle counts and input/readability tests. A tiny rules blob with an infeasible runtime fails. No PC/cloud runtime or gameplay coprocessor qualifies.
+
+The whole-game ambition remains the target. A measured, dependency-complete native slice is the disproof instrument, not a replacement deliverable advertised as BG3. Photorealistic audiovisual equivalence is not a credible stock GBC target; essential decisions and consequences require their own concrete tests. No automatic approval exists for changed probabilities, deleted companions, simplified interactions, flattened elevation or rewritten dialogue.
+
+### Completed causal-state experiment
+
+Run `python3 experiments/causal_quotient.py`. `evidence/causal-quotient.json` records exact partition refinement on two original synthetic 4096-state, four-action systems. This is established finite-state bisimulation, used as a testable mechanism rather than a novelty claim.
+
+- A purely cosmetic timer allows 4096 states to become 256. Transition/observation table data changes from 36,864 to 2,304 bytes.
+- When that timer can change a delayed gameplay outcome, the valid quotient grows to 2176 states and 19,584 table bytes. The naive 256-state quotient is rejected. Seventeen refinement rounds propagate the delayed distinction.
+- For each model, all 16,384 state/action transitions satisfy observation and successor-class agreement. That establishes agreement for every finite action sequence **in these complete finite models**, not merely sampled traces.
+- Observation-contract correctness, a mapping from original runtime state, native code, RAM, cycles, sensory fidelity and full-game scalability are unmeasured. Table counts exclude the source-state mapping and runtime. A direct native routine may be smaller. No BG3 state or rule was recovered.
+
+This gives an explicit way to test a radical abstraction: preserve future influence, not just present appearance. Scaling it to BG3 requires compositional contracts and dependency proofs; enumerating the full global state space is not proposed.
+
+## Archive-index reconnaissance v2
+
+The SteamOS package now independently reads bounded non-solid LSPK v18 directory indexes using the public LSLib layout and a bounded pure-Python LZ4 block decoder. It groups filename-derived candidates into rules, story/scripts, dialogue, localization, structured data and presentation classes. It records physical counts/sizes, compression methods and repeated references to the same payload region. It does not decompress any indexed entry payload or save internal resource names.
+
+These measurements answer which next parser/recovery approach is appropriate. They do not establish code semantics, actual duplicates of independently stored contents, dependency closure, load order, effective campaign content size, compression ratio, legal permissions or compatibility. Patch overlays remain unresolved. Unknown/solid/oversized/malformed indexes produce explicit failure codes. Tool resource limits are not hardware limits.
+
+The parser is tested on synthetic original fixtures, explicit byte-offset fixtures, hostile bounds/names/parts and 500 malformed LZ4 inputs. Its decoder is also compared with python-lz4 4.4.4 on 21 independently compressed streams (0 through 200,000 bytes, repetitive and random). That codec is a development-only oracle and is not bundled. No user-game index has yet been run with v2; the user's successful v1 header scan remains separate evidence.

@@ -35,11 +35,11 @@ class IntakeTests(unittest.TestCase):
         self.assertEqual(found,[(self.game,self.manifest)])
         report=intake.collect(*found[0]); text=json.dumps(report)
         self.assertEqual(report['steam_build_id'],'12345')
-        self.assertEqual(report['archives'][0]['header_bytes_read'],4096)
+        self.assertEqual(report['archives'][0]['header_bytes_read'],40)
         self.assertEqual(report['archives'][0]['signature'],'LSPK')
         self.assertNotIn('PRIVATE-OWNER-SENTINEL',text)
         self.assertNotIn(str(self.home),text)
-        self.assertEqual(report['archives'][0]['header_sha256'],hashlib.sha256((self.game/'Data/Game.pak').read_bytes()[:4096]).hexdigest())
+        self.assertEqual(report['archives'][0]['header_sha256'],hashlib.sha256((self.game/'Data/Game.pak').read_bytes()[:40]).hexdigest())
     def test_secondary_library(self):
         other=self.home/'external volume';(other/'steamapps').mkdir(parents=True)
         (self.library/'steamapps/libraryfolders.vdf').write_text('"libraryfolders" { "1" { "path" "'+str(other)+'" } }')
@@ -87,13 +87,13 @@ class IntakeTests(unittest.TestCase):
         packed=base64.b64decode(blob['base64'])
         self.assertEqual(hashlib.sha256(packed).hexdigest(),blob['sha256'])
         with tarfile.open(fileobj=io.BytesIO(packed),mode='r:gz') as tar:
-            self.assertEqual(len(tar.getmembers()),4)
+            self.assertEqual(len(tar.getmembers()),6)
             for member in tar.getmembers():
-                self.assertTrue(member.isfile());self.assertTrue(member.name.startswith('Retrofy-Intake/'))
+                self.assertTrue(member.isfile());self.assertTrue(member.name.startswith('Retrofy-BG3-Index-v2/'))
                 self.assertNotIn('..',member.name)
                 name=Path(member.name).name
                 self.assertEqual(tar.extractfile(member).read(),(ROOT/'intake'/name).read_bytes())
-            self.assertEqual(tar.getmember('Retrofy-Intake/Retrofy-Intake.desktop').mode,0o755)
+            self.assertEqual(tar.getmember('Retrofy-BG3-Index-v2/Retrofy-Intake.desktop').mode,0o755)
         line=next(x[5:] for x in (ROOT/'intake/Retrofy-Intake.desktop').read_text().splitlines() if x.startswith('Exec='))
         args=shlex.split(line);self.assertEqual(args[:2],['python3','-c']);self.assertEqual(args[-1],'%k')
         compile(args[2],'<desktop-launcher>','exec')

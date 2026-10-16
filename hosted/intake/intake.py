@@ -10,9 +10,14 @@ import stat
 import subprocess
 import sys
 import tempfile
+import time
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lspk import safe_inspect, CATEGORIES
 
 APPID = '1086940'
-HEADER_LIMIT = 4096
+HEADER_LIMIT = 40
 MAX_ARCHIVES = 2048
 MAX_METADATA = 2 * 1024 * 1024
 KNOWN_NAME = re.compile(r'(?i)(?:Assets|Effects|Engine|EngineShaders|Game|GamePlatform|Gustav(?:Dev)?|Shared(?:Dev)?|Materials|Models|Textures(?:_\d+)?|VirtualTextures(?:_\d+)?|Patch\d+(?:_Hotfix\d+)?|DiceSet\d+|English|French|German|Spanish|Polish|Russian|Italian|Chinese|ChineseTraditional|Japanese|Korean|Portuguese|Turkish|Ukrainian)\.pak\Z')
@@ -120,7 +125,9 @@ def collect(game, manifest=None):
                         raise IntakeError('Archive-count limit exceeded.')
                     paths.append(Path(entry.path))
     rows, skipped = [], 0
-    for path in sorted(paths):
+    index_read_budget = [256 * 1024 * 1024, time.monotonic() + 120]
+    for ordinal, path in enumerate(sorted(paths), 1):
+        print("Inspecting archive " + str(ordinal) + " of " + str(len(paths)) + "...", flush=True)
         try:
             # Parent locations are fixed and not links; final component is opened O_NOFOLLOW.
             head, size = regular_bytes(path, HEADER_LIMIT)
@@ -134,19 +141,55 @@ def collect(game, manifest=None):
                          location='Localization' if path.parent == locale else 'Data',
                          size_bytes=size, header_bytes_read=len(head),
                          header_sha256=hashlib.sha256(head).hexdigest(),
-                         signature=signature, header_version_candidate=version))
+                         signature=signature, header_version_candidate=version,
+                         index=safe_inspect(path, index_read_budget) if signature == 'LSPK' and version == 18 else dict(status='unresolved', reason='not_lspk_v18')))
     if not rows:
         raise IntakeError('No readable archive files found in Data or Localization.')
-    return dict(schema='retrofy-bg3-intake-v1', appid=APPID, steam_build_id=build,
-                fingerprint_scope='metadata-and-first-4096-bytes-per-archive; NOT full-file verification',
+    return dict(schema='retrofy-bg3-index-v2', appid=APPID, steam_build_id=build,
+                fingerprint_scope='metadata, partial archive headers and decoded index digests; NOT full-file verification',
+                indexed_archives=sum(row['index']['status'] == 'indexed' for row in rows),
+                index_bytes_read=256 * 1024 * 1024 - index_read_budget[0],
+                aggregate_categories=aggregate(rows),
                 archives=rows, skipped_archive_entries=skipped,
                 total_archive_bytes=sum(row['size_bytes'] for row in rows),
                 privacy=dict(account_ids_included=False, absolute_paths_included=False,
                              saves_read=False, game_contents_extracted=False, network_used=False),
                 limitations=['Build ID is metadata, not proof of unmodified files.',
                              'Archive header hashes are partial fingerprints, not full file hashes.',
-                             'Header version is an unvalidated format hint; no archive decoding is performed.',
+                             'Only version-18 directory indexes are decoded; no payloads or scripts are read/executed.',
+                             'Categories are filename-based hypotheses, not recovered semantics.',
+                             'Totals count physical index records; patch overlays and dependencies are unresolved.',
+                             'Limits: 32 MiB compressed/128 MiB decoded per index, 256 MiB index reads per run, 45 seconds per index / 120 seconds total parser work; blocking filesystem I/O is not timed out.',
                              'Mods, loose overrides, permissions, adaptation rights and compatibility are unassessed.'])
+
+
+def aggregate(rows):
+    totals = {key: dict(entries=0, stored_bytes=0, logical_bytes=0) for key in CATEGORIES}
+    for row in rows:
+        if row['index']['status'] != 'indexed':
+            continue
+        for key, values in row['index']['categories'].items():
+            for field, value in values.items():
+                totals[key][field] += value
+    return totals
+
+
+def summary_text(report):
+    lines = ['RETROFY BG3 INDEX ANALYSIS v2', 'Nothing uploaded. No payloads extracted.',
+             'Steam build: ' + (report['steam_build_id'] or 'not identified'),
+             'Archive headers inspected: ' + str(len(report['archives'])),
+             'Indexes decoded: ' + str(report['indexed_archives']),
+             'Unresolved archives: ' + str(len(report['archives']) - report['indexed_archives']),
+             '', 'Candidate entries (filename heuristics):']
+    for name in CATEGORIES:
+        values = report['aggregate_categories'][name]
+        if values['entries']:
+            lines.append(name + ': ' + str(values['entries']) + ' / ' + str(values['logical_bytes']) + ' logical bytes')
+    lines += ['', 'Physical records only. Patches/duplicates not resolved.',
+              'These bytes are NOT a GBC ROM-size requirement.',
+              'Rules, dependencies, fidelity and compatibility remain unproved.',
+              'Full details and failure reasons: report.json']
+    return '\n'.join(lines) + '\n'
 
 
 def save_report(report, parent):
@@ -158,14 +201,10 @@ def save_report(report, parent):
     with os.fdopen(fd, 'w', encoding='utf-8') as stream:
         json.dump(report, stream, indent=2)
         stream.write('\n')
-    summary = folder / 'README.txt'
+    summary = folder / 'SUMMARY.txt'
     fd = os.open(summary, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
     with os.fdopen(fd, 'w', encoding='utf-8') as stream:
-        stream.write('Retrofy local intake complete. Nothing was uploaded.\n'
-                     'report.json contains Steam build metadata, archive sizes and partial header fingerprints.\n'
-                     'No account IDs, absolute paths, saves or extracted contents are included.\n'
-                     'This does not establish game compatibility or a verified full installation.\n'
-                     'Review report.json locally before choosing whether to share it.\n')
+        stream.write(summary_text(report))
     return path
 
 
@@ -191,7 +230,7 @@ def main():
     dialog = None
     try:
         dialog = Dialog()
-        status, _ = dialog.run('ask', 'Inspect your installed Baldurs Gate 3?\n\nReads Steam installation metadata and up to 4096 bytes per game archive. Creates a NEW private report folder on your Desktop.\n\nNo account IDs in the report. No saves read, extraction, network use, installation changes or automatic upload.\n\nThis is intake only, not a game converter. Continue?')
+        status, _ = dialog.run('ask', 'Inspect your installed Baldurs Gate 3?\n\nReads installation metadata, 40-byte archive header probes and bounded LSPK v18 DIRECTORY INDEXES. Indexes are decompressed in memory; entry payloads are never extracted or decoded. Creates a NEW private report folder on your Desktop.\n\nNo account IDs in the report. No saves read, game extraction, network use, installation changes or automatic upload.\n\nThis is intake only, not a game converter. Continue?')
         if status:
             return 0
         home = Path.home()
@@ -211,10 +250,10 @@ def main():
         # Fixed standard Desktop if present; otherwise home. No account directory enumeration.
         parent = home / 'Desktop' if (home / 'Desktop').is_dir() else home
         path = save_report(report, parent)
-        message = ('Intake complete: ' + str(len(report['archives'])) + ' archives inspected.\n\n'
+        message = ('Index analysis complete: ' + str(report['indexed_archives']) + ' indexes decoded / ' + str(len(report['archives'])) + ' archives.\n\n'
                    'Steam build: ' + (report['steam_build_id'] or 'not identified') + '\n'
                    'A NEW Retrofy-Report folder was created on your Desktop (or home folder).\n'
-                   'Open report.json there to review it. Nothing was uploaded.\n\n'
+                   'Open SUMMARY.txt for the short result, or report.json for details. Nothing was uploaded.\n\n'
                    'No conversion or compatibility claim is made.')
         print(message)
         dialog.run('info', message)

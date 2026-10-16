@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Retrofy Local Intake
-Comment=Inspect BG3 metadata locally; no upload
+Name=Retrofy BG3 Index Analysis
+Comment=Inspect BG3 archive indexes locally; no upload
 Icon=dialog-information
 Terminal=true
 Exec=python3 -c "import pathlib,runpy,sys,urllib.parse; p=sys.argv[1]; p=urllib.parse.unquote(urllib.parse.urlparse(p).path) if p.startswith('file:') else p; runpy.run_path(str(pathlib.Path(p).resolve().parent/'intake.py'),run_name='__main__')" %k

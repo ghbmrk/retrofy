@@ -22,8 +22,12 @@ node scripts/validate-artifact.mjs
 
 Build output is `dist/`. Publish through the Sites source workflow: commit/push the exact source, package that source's build output, then deploy the saved version privately. Keep local project configuration out of reusable examples. No proprietary game material belongs in source, logs or artifacts.
 
-## SteamOS local intake
+## SteamOS local index reconnaissance v2
 
-`/intake` offers a deterministic, source-only tar.gz built by `scripts/package-intake.py`. The GUI launcher runs Python 3 and KDialog/Zenity on the user's SteamOS machine, independently of Steam linking or an API key. No installer, sudo, network API, extraction, account fields, saves or userdata access. It creates a new private local report directory. Only manifest app/build identifiers and safe archive labels, sizes, signature hints and SHA-256 hashes of the first 4096 bytes enter the report. Full-file identity, mods and compatibility remain unassessed. Installation folders and the user's local desktop are trusted; hostile local processes are outside this boundary.
+`/intake` offers a deterministic six-file, source-only tar.gz. The GUI launcher runs Python 3 and KDialog/Zenity, independently of Steam linking or an API key. No installer, sudo, network client, account output or saves/userdata scan. Only new private reports are written; the installation is unchanged.
 
-Run `python3 tests/intake_test.py` for discovery, privacy, link/device rejection, cancellation, non-destructive output, archive packaging and launcher argument checks. Native KDE/SteamOS launch behavior requires user-device verification; synthetic tests do not establish it. Launch instructions and limitations ship inside the archive.
+The scanner reads 40-byte archive header probes and bounded non-solid v18 directory indexes. Index metadata is decompressed in memory; directory-referenced payloads are never read, extracted, decoded or executed. Reports contain only aggregate filename-based categories, physical counts/sizes, compression methods, safe archive labels and digests. Internal resource paths stay transient in memory. A signature/header probe of an unknown file can read its first 40 bytes. Raw bytes and internal paths are never reported.
+
+The public layout reference is LSLib commit 6f5f6987d10d8485876b8368431c948e4dea4f83. An MIT notice is included for attribution; no LSLib binary is bundled. The bounded LZ4 decoder is independently tested against python-lz4 4.4.4, a temporary development-only dependency. Resource/format failures stay unresolved. Patches, dependencies, mods, permissions and behavioral semantics remain unassessed. Sizes are physical metadata totals, not an estimate of native ROM size.
+
+Checks: `python3 tests/intake_test.py` (9 tests); `python3 tests/lspk_test.py` (12 tests; independent codec case skips if python-lz4 is absent); `node --test tests/worker.mjs` (18 hosted tests). Then `bash scripts/build.sh` and `node scripts/validate-artifact.mjs`. The package is deterministic. Version 1 ran on the user's machine; v2 still requires a local run.
