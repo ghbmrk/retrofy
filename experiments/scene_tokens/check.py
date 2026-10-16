@@ -54,7 +54,7 @@ def sections(path):
                 limits='Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate.')
 
 
-def emulated(build,variant,out):
+def emulated(build,variant,out,scene_reference=None,scene_observer=None,frame_observer=None):
     from pyboy import PyBoy
     out.mkdir(parents=True,exist_ok=False)
     folder=build/variant;rom=folder/'scene.gbc'
@@ -66,9 +66,12 @@ def emulated(build,variant,out):
     p.set_emulation_speed(0)
     weights,_=train()
     frames=0;latencies=[];ticks=[];overflows=0;checks=0;interactive=[];stage_times={name:[] for name in ["render","upload"]};stage_overflows={name:0 for name in stage_times}
+    latency_groups={'full':[],'cached':[]}
     def tick(n=1):
         nonlocal frames
-        p.tick(n,True);frames+=n
+        if frame_observer:
+            for _ in range(n):p.tick(1,True);frames+=1;frame_observer(p,symbols)
+        else:p.tick(n,True);frames+=n
     def get(name):return p.memory[symbols['_'+name]]
     def put(name,value):p.memory[symbols['_'+name]]=value
     def flag(room,value=None):
@@ -76,11 +79,12 @@ def emulated(build,variant,out):
         if value is not None:p.memory[address]=value
         return p.memory[address]
     def press(button):
-        old=get('generation');p.button_press(button)
+        old=get('generation');old_full=get('full_generation') if '_full_generation' in symbols else None;p.button_press(button)
         for n in range(1,61):
             tick()
             if get('generation')!=old:break
         else:raise AssertionError('No completed scene in 60 emulator frames')
+        if old_full is not None:latency_groups['full' if get('full_generation')!=old_full else 'cached'].append(n)
         p.button_release(button);tick(2);latencies.append(n)
     def check(label):
         nonlocal checks,overflows
@@ -94,7 +98,9 @@ def emulated(build,variant,out):
             assert p.memory[address+phase]==expected_raw,(label,phase,'raw proposal mismatch')
             previous=target_token
         address=symbols['_screen_map'];actual=[p.memory[address+i] for i in range(360)]
-        assert actual==tilemap(t,flags,key,expected),label
+        expected_map=scene_reference(room,t,flags,key,expected) if scene_reference else tilemap(t,flags,key,expected)
+        assert actual==expected_map,label
+        if scene_observer:scene_observer(p,symbols,label)
         ticks.append(get('inference_ticks'));overflows+=get('inference_overflow');checks+=1
         for stage in stage_times:
             stage_times[stage].append(get(stage+'_ticks'));stage_overflows[stage]+=get(stage+'_overflow')
@@ -142,6 +148,7 @@ def emulated(build,variant,out):
                     token_checks=checks*8,tilemap_checks=checks*360,
                     injected_scene_contexts=1024,interactive=interactive,
                     input_to_scene_frames=dict(min=min(latencies),max=max(latencies)),
+                    input_to_scene_groups={name:dict(samples=len(values),min=min(values),max=max(values)) for name,values in latency_groups.items() if values},
                     inference_timer_ticks_1024_tcycles=dict(min=min(ticks),max=max(ticks),overflows=overflows),
                     max_repairs_in_one_scene=max_repairs,
                     stage_timer_ticks_1024_tcycles={name:dict(min=min(values),max=max(values),overflows=stage_overflows[name]) for name,values in stage_times.items()},

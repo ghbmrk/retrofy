@@ -8,6 +8,8 @@ Working today: strict single-board ASCII XSB intake → SHA-256 fingerprint → 
 
 ## Native scene-generation research
 
+The [experimental loop](docs/experimental-loop.md) now includes [exact content-codec results](evaluation/content-codec/RESULTS.md): 18 native ROM variants, frozen unseen-content tests, actual VRAM checks and measured size/latency selection. Shared motifs favor dictionaries; unfamiliar motifs expand and random content favors bit packing. Full updates take 2–4 emulator frames and cached movement takes one, with VBlank DMA replacing LCD blanking. These remain original synthetic experiments, not commercial-game conversions.
+
 A [working next-scene-token experiment](evaluation/scene-tokens/RESULTS.md) runs a tiny trained integer predictor inside a 32 KiB native ROM. Three implementations share a 32-room synthetic world with mutable room state, A/B/D-pad controls and revisit checks. Each passed 1,028 exact-ROM scene checks; repeated builds match. The learned predictor has 640 weight bytes but needs repairs on 52 of 256 held-out sequences. The direct procedural baseline is smaller and faster. This is a bounded architecture experiment, not a commercial-game adaptation or an LLM on Game Boy Color. Source, three ROMs, emulator screenshots and reproducible commands are retained with the results.
 
 ## Run locally

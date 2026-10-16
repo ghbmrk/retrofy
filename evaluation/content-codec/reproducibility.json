@@ -1,0 +1,26 @@
+{
+  "shared": {
+    "raw": "1965edd3e74f5a057b14cef2839c22883897a2c0ad48be91bac938f3dbcdb5ab",
+    "packed": "766543c2e03e505756587fe748265c262be719a3934d59dbb5be79e25a74e7f0",
+    "rle": "861949a96b708f32d1dd1db0ddd3807dcf3848763271071fd6b75eace6cee2dd",
+    "lz": "31849445f941cc2408e36d00722727e7b2cd3db0be489ffe031fb6bc10b6e40a",
+    "patch": "d869ec19bdc37cdb0cefe4bfb6c11140beb92556782246b82c0f652887a67a7a",
+    "patch-fast": "a7d8ab47c7d639b829cd70aafec82f99c21193b2278800eb42ef816f1c623a4c"
+  },
+  "novel": {
+    "raw": "2da6ff25f2991d75c452ec25eecc26ddd4bae6c51f08a3f5bd6589bb8d2fc720",
+    "packed": "7359ada198c5af8654cd1297181d552edafb721367739babd934c317f09edde5",
+    "rle": "605aa5a901b6a696d6172249e3e2e8ebdea7fd7171a8f862210fe61be25ccb28",
+    "lz": "1a33b082eaa71e8637637baa65205dc27cef32f1bea9d91d85db6cc2bd3ea0d6",
+    "patch": "2608bdd12dbe082a2a87a6f8eba475ae0d1f7abb8d7c207556a547aa8207dc7a",
+    "patch-fast": "d53f6eef3fc0a8e176c8f327909b44405b9ce67951b3911389de89e11dfbc086"
+  },
+  "entropy": {
+    "raw": "2653c9c687b0ff979255bfb07c058c85439f530666eb34130f5b72b2343f23d5",
+    "packed": "5e3a8e3a3554b6799a746a8e6696452ff07c5a9a297b5c4779a4d150161572a9",
+    "rle": "ae10534acc37e8c0e553567af4aeafed24f5ad1cce1d86f8c1f803a213401bf9",
+    "lz": "d938596d7c730ef5ba12d33c0884b5f9bd04fbb3ce590161aab718fa45d07fff",
+    "patch": "fd68e1426edcda496baaef7f47883fa630fd4287efbe89aa34e8697e88d94e2f",
+    "patch-fast": "e4de5942db0d31b4a49a4c9a7a5e61f7adbe75c5820555b8768d318ebbedfaee"
+  }
+}

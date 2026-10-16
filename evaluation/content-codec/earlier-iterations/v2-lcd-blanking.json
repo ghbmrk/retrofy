@@ -1,0 +1,2592 @@
+{
+  "schema": 1,
+  "scope": "Exact synthetic content and inherited state tests",
+  "corpora": {
+    "shared": {
+      "raw": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "raw",
+          "rom_sha256": "7961e260ed443f8f4e7047311d2314b5097e80f3d9f696a39cf6c82c25b9cfe3",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 19,
+              "max": 20,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 151,
+              "max": 223,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 14683
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 15195,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 17399,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 17406,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 17418,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 17270,
+            "linked_rom_extent_bytes": 17419,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "packed": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "packed",
+          "rom_sha256": "d542928632caae9af337236021b2047b2af1c30c08818bd0931e454ffcd74cb3",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 58,
+              "max": 59,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 112,
+              "max": 184,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 7607
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 8119,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 10323,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 10330,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 10342,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 10194,
+            "linked_rom_extent_bytes": 10343,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "rle": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "rle",
+          "rom_sha256": "87f28319e95f9c5973e8ca217304e3c7b6fa19778cf7ac7b88408bd885a25634",
+          "pyboy": "2.7.0",
+          "frames": 9045,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 8
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 122,
+              "max": 131,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 109,
+              "max": 248,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 12592
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 13104,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 15308,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 15315,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 15327,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 15179,
+            "linked_rom_extent_bytes": 15328,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "lz": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "lz",
+          "rom_sha256": "8e55646c8a0f271ea17379d54dbd064c47d4ade879808e95b4309a6d5ae92083",
+          "pyboy": "2.7.0",
+          "frames": 9013,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 7
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 76,
+              "max": 85,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 155,
+              "max": 234,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 11171
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 11683,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 13887,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 13894,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 13906,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 13758,
+            "linked_rom_extent_bytes": 13907,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "patch": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "patch",
+          "rom_sha256": "a7bc3db0416621ec4677d6bce62f976fdf435300f9f50ef7eb768c6638bb353b",
+          "pyboy": "2.7.0",
+          "frames": 10043,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 8
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 140,
+              "max": 140,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 113,
+              "max": 239,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 5035
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 5547,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 7751,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 7758,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 7770,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 7622,
+            "linked_rom_extent_bytes": 7771,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      }
+    },
+    "novel": {
+      "raw": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "raw",
+          "rom_sha256": "565fb95cc1b12686055cb9bf4f45550f8078fce2eeac5b46f2f8d99e3ea57547",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 19,
+              "max": 20,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 151,
+              "max": 223,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 14683
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 15195,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 17399,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 17406,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 17418,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 17270,
+            "linked_rom_extent_bytes": 17419,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "packed": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "packed",
+          "rom_sha256": "c263fff015420eb2c2e93908259b1065c80f76438340ac81a545d2667ee7b2d2",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 58,
+              "max": 59,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 112,
+              "max": 184,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 7607
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 8119,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 10323,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 10330,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 10342,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 10194,
+            "linked_rom_extent_bytes": 10343,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "rle": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "rle",
+          "rom_sha256": "bb1ac6d0ace9bcd5f6c01de232bf3c6e34eb29839a502f50d4be682bc364b8fc",
+          "pyboy": "2.7.0",
+          "frames": 9013,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 7
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 121,
+              "max": 130,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 109,
+              "max": 190,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 12523
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 13035,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 15239,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 15246,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 15258,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 15110,
+            "linked_rom_extent_bytes": 15259,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "lz": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "lz",
+          "rom_sha256": "b21672926c53755829f5e3475b55d6a156a626bc429f31cdf90a5ee65d2d5abe",
+          "pyboy": "2.7.0",
+          "frames": 9013,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 7
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 76,
+              "max": 87,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 153,
+              "max": 234,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 11302
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 11814,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 14018,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 14025,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 14037,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 13889,
+            "linked_rom_extent_bytes": 14038,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "patch": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "patch",
+          "rom_sha256": "fa56df6e05f074a382aee50098b03c53471e2ee9ba244ecf44995b21a3b37d8c",
+          "pyboy": "2.7.0",
+          "frames": 10043,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 8
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 140,
+              "max": 142,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 113,
+              "max": 239,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 6155
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 6667,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 8871,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 8878,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 8890,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 8742,
+            "linked_rom_extent_bytes": 8891,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      }
+    },
+    "entropy": {
+      "raw": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "raw",
+          "rom_sha256": "e7e5f564314d851f602e23730ffff9dde4eb95e16209d54efd488ffde517966a",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 19,
+              "max": 20,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 151,
+              "max": 223,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 14683
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 15195,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 17399,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 17406,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 17418,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 17270,
+            "linked_rom_extent_bytes": 17419,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "packed": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "packed",
+          "rom_sha256": "1733fda69babeed33e89c0b49194c26bd2b533f3a97b7bbfd298687ae5c7fd33",
+          "pyboy": "2.7.0",
+          "frames": 7982,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 6
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 58,
+              "max": 59,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 112,
+              "max": 184,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 7607
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 8119,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 10323,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 10330,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 10342,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 10194,
+            "linked_rom_extent_bytes": 10343,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "rle": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "rle",
+          "rom_sha256": "c75965033024d1bb9046ebac31f586f16d26b5abe961d20abbfdd49f7fe7acfe",
+          "pyboy": "2.7.0",
+          "frames": 9013,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 7
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 119,
+              "max": 127,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 112,
+              "max": 192,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 12414
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 12926,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 15130,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 15137,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 15149,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 15001,
+            "linked_rom_extent_bytes": 15150,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "lz": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "lz",
+          "rom_sha256": "0ce47a977f85bfbb6133fb1c798c27f55c7413e27698815efb7b2ec6f4e6e5e1",
+          "pyboy": "2.7.0",
+          "frames": 9013,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 7
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 81,
+              "max": 87,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 152,
+              "max": 229,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 11706
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 12218,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 14422,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 14429,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 14441,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 14293,
+            "linked_rom_extent_bytes": 14442,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      },
+      "patch": {
+        "host": {
+          "exact_unoverlaid_scenes": 32,
+          "exact_overlay_contexts": 1024,
+          "tile_comparisons": 380160
+        },
+        "native": {
+          "variant": "patch",
+          "rom_sha256": "7d6e3591cfed6bf25f56e429852dc3eb4ab52c2e21de8aca426d47ab17b8ef02",
+          "pyboy": "2.7.0",
+          "frames": 10043,
+          "scene_checks": 1028,
+          "token_checks": 8224,
+          "tilemap_checks": 370080,
+          "injected_scene_contexts": 1024,
+          "interactive": [
+            "Chest/key and NPC state persist across departure and return using controller inputs.",
+            "Locked exit refuses movement without key and allows it with key (seeded state).",
+            "Conflicting directions ignored; held direction performs one step."
+          ],
+          "input_to_scene_frames": {
+            "min": 1,
+            "max": 8
+          },
+          "inference_timer_ticks_1024_tcycles": {
+            "min": 4,
+            "max": 4,
+            "overflows": 0
+          },
+          "max_repairs_in_one_scene": 0,
+          "stage_timer_ticks_1024_tcycles": {
+            "render": {
+              "min": 142,
+              "max": 142,
+              "overflows": 0
+            },
+            "upload": {
+              "min": 111,
+              "max": 237,
+              "overflows": 0
+            }
+          },
+          "linker": {
+            "areas": {
+              "_CODE": {
+                "address": 512,
+                "bytes": 9396
+              },
+              "_HEADER0": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER1": {
+                "address": 0,
+                "bytes": 5
+              },
+              "_HEADER2": {
+                "address": 0,
+                "bytes": 7
+              },
+              "_HEADER3": {
+                "address": 0,
+                "bytes": 8
+              },
+              "_HEADER4": {
+                "address": 0,
+                "bytes": 96
+              },
+              "_HEADER5": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER6": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER7": {
+                "address": 0,
+                "bytes": 48
+              },
+              "_HEADER8": {
+                "address": 0,
+                "bytes": 6
+              },
+              "_HEADER9": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADERa": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERb": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERc": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERd": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADERe": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADERf": {
+                "address": 0,
+                "bytes": 1
+              },
+              "_HEADER10": {
+                "address": 0,
+                "bytes": 2
+              },
+              "_HEADER11": {
+                "address": 0,
+                "bytes": 171
+              },
+              "_HOME": {
+                "address": 9908,
+                "bytes": 2204
+              },
+              "_INITIALIZER": {
+                "address": 12112,
+                "bytes": 7
+              },
+              "_GSINIT": {
+                "address": 12119,
+                "bytes": 12
+              },
+              "_GSFINAL": {
+                "address": 12131,
+                "bytes": 1
+              },
+              "_DATA": {
+                "address": 49312,
+                "bytes": 475
+              },
+              "_INITIALIZED": {
+                "address": 49787,
+                "bytes": 7
+              },
+              "_HRAM": {
+                "address": 65408,
+                "bytes": 19
+              },
+              "_FONT_HEADER0": {
+                "address": 0,
+                "bytes": 3
+              },
+              "_HEADER_LCD0": {
+                "address": 0,
+                "bytes": 3
+              }
+            },
+            "linked_rom_section_bytes": 11983,
+            "linked_rom_extent_bytes": 12132,
+            "static_data_and_hram_bytes": 501,
+            "limits": "Section sum is not physical ROM size. Stack high-water and SDCC reserved shadow OAM are separate."
+          },
+          "limits": [
+            "Injected contexts are developer tests, not organically reached states.",
+            "Cached movement skips generation; timer samples describe the last full generation.",
+            "Timer measures generate+validator with 1024-T-cycle resolution and interrupt overhead; excludes rendering and VRAM upload.",
+            "Overflow invalidates corresponding timer readings. Input latency is not cycle profiling.",
+            "No power-cycle save persistence (volatile RAM only), audio, original-game comparison, human usability or physical Chromatic test.",
+            "Visual corpus is original synthetic; content fidelity is tile-ID exactness only."
+          ]
+        }
+      }
+    }
+  }
+}
